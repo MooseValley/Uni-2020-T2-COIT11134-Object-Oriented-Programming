@@ -1,4 +1,4 @@
-# Uni - 2020-T1 - COIT11134 - Object Oriented Programming
+# COIT11134 - Object Oriented Programming (2020-T1)
 
 All of my class work will be uploaded here.
 
@@ -8,8 +8,10 @@ This repo will include:
 * hints, tips, information ... given in class,
 * etc.
 
-### Mike O'Malley's Java Videos:
-* http://tinyurl.com/MikesJavaVideos
+### Other useful links:
+
+* Mike O'Malley's Java Videos:
+<br>http://tinyurl.com/MikesJavaVideos
 
 Mike O'Malley
 <br>Email: m.omalley@cqu.edu.au
