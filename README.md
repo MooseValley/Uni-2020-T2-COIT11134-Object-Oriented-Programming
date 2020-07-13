@@ -8,8 +8,10 @@ This repo will include:
 * hints, tips, information ... given in class,
 * etc.
 
-### Other useful links:
+### Golden Rule:
+This is a programming course, the emphasis is on you doing lots of programming, exploring a wide range of problems, writing lots and lots of code, and keeping up with the work each week.
 
+### Other useful links:
 * Mike O'Malley's Java Videos:
 <br>http://tinyurl.com/MikesJavaVideos
 
