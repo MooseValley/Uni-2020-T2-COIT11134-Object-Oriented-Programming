@@ -21,8 +21,10 @@ This repo will include:
 * Mike O'Malley's Java Videos:
 <br>http://tinyurl.com/MikesJavaVideos
 
-* Github basics where I show you 2 ways to use Github (web browser, command line) and briefly discuss
-other ways (Netbeans, Eclipse, dev your own Github Client, etc):
+* Github basics where I show you 2 ways to use Github
+(web browser and command line)
+and briefly discuss other ways
+(Desktop App, Netbeans, Eclipse, develop your own Github Client, etc):
 <br>https://www.youtube.com/watch?v=A30iwpDbkwc
 
 Mike O'Malley
