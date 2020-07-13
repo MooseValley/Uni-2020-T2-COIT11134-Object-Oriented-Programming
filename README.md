@@ -11,7 +11,7 @@ This repo will include:
 ### Golden Rules:
 * This is a programming course, the emphasis is on you doing lots of programming, exploring a wide range of problems, writing lots of code to ensure you understand all of the course topics, and keeping up with the work each week.
 * The student study requirement for this course is **12 hours per week minimum**: most of this time should be spent writing code to solve problems and explore the course topics.
-* If you are struggling or fall behind, you may need to do a lot more than 12 hours per week.
+* If you are struggling or fall behind, you may need to do a more than 12 hours per week.
 
 ### Need help:
 * Course forums for all tutorial question and course / topic related questions.
