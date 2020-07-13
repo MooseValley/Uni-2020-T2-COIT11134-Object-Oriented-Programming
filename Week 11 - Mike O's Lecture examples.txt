@@ -1,0 +1,39 @@
+******************************************************
+COIT11134 Object Oriented Programming (2020-T2)
+Week: 11
+Course Web Page:             https://moodle.cqu.edu.au/course/view.php?id=17401
+Course Coordinator:          Farzad Sanati, f.sanati@cqu.edu.au, Townsville
+Rocky Teacher (Part-Time):   Mike O'Malley, m.omalley@cqu.edu.au
+Mike O'Malley's GitHub:      https://github.com/MooseValley/Uni-2020-T2-COIT11134-Object-Oriented-Programming
+Mike O'Malley's Java Videos: http://tinyurl.com/MikesJavaVideos
+******************************************************
+
+CLASS STARTING SOON.  :)
+* Please feel free to join in via chat window or voice !  :)
+
+ZOOM / Class Recordings:
+* Mike O's reminder to himself: Reboot PC before class. Stop CLOUD Recording. Record video locally.
+* Students Please Note: Online sessions are recorded for educational purposes.  Recordings may be uploaded to public YouTube, Moodle, Microsoft Teams, and/or other locations.  If you do NOT want to be recorded please turn your webcam and/or microphone OFF during the session. (You can type questions / comments in the chat window).  Your participation will signify your consent to the recording and publication for educational purposes.
+
+ROAD MAP:
+Week 01 - Revision of Java, Github review.  Note: Github is mandatory in this course.
+Week 02 - Inheritance
+Week 03 - Polymorphism
+Week 04 - GUI and Event Handling
+Week 05 - GUI and Event Handling.  Next week: mid-term break
+Week 06 - Exception Handling, and File IO
+Week 07 - Interfaces and Inner Classes
+Week 08 - Generic methods and classes
+Week 09 - Generic classes
+Week 10 - List and Algorithm
+Week 11 - Stacks, Queues and Trees    <--- YOU ARE HERE !
+Week 12 - Final Revision
+
+
+LAST WEEK:  Week 10
+* Week 10 - List and Algorithm
+
+THIS WEEK:  Week 11
+* Week 11 - Stacks, Queues and Trees
+
+EOF.
