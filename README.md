@@ -18,6 +18,7 @@ This repo will include:
 ### Need help:
 * Course forums for all tutorial question and course / topic related questions.
 * Contact the CC directly if you need help on your assignment: Farzad Sanati, f.sanati@cqu.edu.au, Townsville
+* NOTE: Mike O is employed by CQUni for 2 hours per week ONLY - just to teach the on-line lecture.
 
 
 ### Other useful links:
@@ -26,7 +27,7 @@ This repo will include:
 <br>http://tinyurl.com/MikesJavaVideos
 
 * Backups - How To:
-How to keep backups and SECURE backups on Windows PCs. Moose's Software Valley - Established July, 1996. https://rebrand.ly/MoosesSoftware
+How to keep backups and SECURE backups on Windows PCs.
 <br>https://www.youtube.com/watch?v=Du7dk3hdG-M
 
 * Github Basics:

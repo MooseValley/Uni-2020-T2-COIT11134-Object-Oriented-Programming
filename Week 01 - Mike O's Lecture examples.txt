@@ -31,6 +31,45 @@ Week 12 - Final Revision
 
 
 THIS WEEK:  Week 1
-* Week 01 - Revision of Java, Github review.  Note: Github is mandatory in this course.
+* Week 01 - Revision of Java, Github review.
+* Note: Github is mandatory in this course.
+* W1.pptx
+* Introduction to version control with Git and GitHub.pptx
+* W1_Introduction.pptx
+* Course Web Page
+* Assessment - Exercises, Assignments,
+
+Golden Rules:
+* This is a programming course, the emphasis is on you doing lots of programming, exploring a wide range of problems, writing lots of code to ensure you understand all of the course topics, and keeping up with the work each week.
+* The student study requirement for this course is 12 hours per week minimum: most of this time should be spent writing code to solve problems and explore the course topics.
+* If you are struggling or fall behind, you may need to do a more than 12 hours per week.
+
+Need help:
+* Course forums for all tutorial question and course / topic related questions.
+* Contact the CC directly if you need help on your assignment: Farzad Sanati, f.sanati@cqu.edu.au, Townsville
+* NOTE: Mike O is employed by CQUni for 2 hours per week ONLY - just to teach the on-line lecture.
+
+* Backups - How To:
+How to keep backups and SECURE backups on Windows PCs:
+https://www.youtube.com/watch?v=Du7dk3hdG-M
+
+* Github Basics:
+Github Basics / How to use GitHub.
+A FREE backup of your work in the cloud.  You are going to be using Github or something like if you go on to be a software developer in the future.
+I show you 2 ways to use Github (web browser and command line)
+and briefly discuss other ways (Desktop App, Netbeans, Eclipse, develop your own Github Client, etc)
+https://www.youtube.com/watch?v=A30iwpDbkwc
+
+* Mike O's GitHub:
+https://github.com/MooseValley/Uni-2020-T2-COIT11134-Object-Oriented-Programming
+
+* Mike O's Programming Practice Questions - v0.008 (PDF):
+Dozens of interesting programming questions for you to solve.
+https://www.mediafire.com/file/dpk59wchfu715to/Mike_O%27s_Programming_Practice_Questions_-_v0.008.pdf/file
+
+* Mike O'Malley's Java Videos - 100+ tutorial videos:
+http://tinyurl.com/MikesJavaVideos
+
+
 
 EOF.
