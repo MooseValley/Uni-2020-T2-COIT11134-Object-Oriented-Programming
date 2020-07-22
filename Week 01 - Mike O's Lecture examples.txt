@@ -209,6 +209,7 @@ public class FixedAccount
 
    public FixedAccount (int accountNumber, .....)
    {
+
       this.accountNumber = accountNumber;
       :::
       numberOfAccounts++;
@@ -231,6 +232,12 @@ public class FixedAccount
       return numberOfAccounts;
    }
 
+   public static int getAccountID ()
+   {
+   	return accountNumber; // ERROR
+   }
+
+
    public void setAccountNumber (int accountNumber)
    {
       if (accountNumber < 0)
@@ -251,5 +258,10 @@ public class FixedAccount
 }
 
 
+FixedAccount acc1 = new FixedAccount ();
+FixedAccount acc2 = new FixedAccount (44, ....);
+
+Overloading
+Polymorphism
 
 EOF.

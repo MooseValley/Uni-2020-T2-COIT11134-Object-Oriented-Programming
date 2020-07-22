@@ -35,5 +35,296 @@ LAST WEEK:  Week 1
 
 THIS WEEK:  Week 2
 * Week 02 - Inheritance
+* Finish off last slides from Week 1
+* Static Vs Instance - Bank Accounts - v0.04.ppt
+
+
+
+
+public class Employee
+{
+   // name, id, salary, hireday, etc
+}
+
+public class Manager
+{
+   // name, id, salary, hireday, etc + bonus
+}
+
+
+Inheritance
+* IS A
+* Manager IS A Employee
+* i.e. all Managers are Employees
+* Employee IS A Manager ?  FALSE
+* not all Employees are Managers
+
+
+Q. Do We Use method Overloading ?
+YES
+
+
+
+public class Manager extends Employee
+{
+   // bonus
+   // Everything else in the Employee class is automatically available to Manager
+}
+
+
+public class Manager extends Product ?????
+public class Manager extends Plant ?????
+
+
+Inheritance Relationship Examples:
+* German Shephard IS A Dog ???  German Shepard is an instance of Dog ???
+* Dog IS A Animal
+* Digital Clock IS A Clock
+* Car IS A Vehicle
+* Fruit Tree IS A Plant
+* Hand IS A BodyPart ?
+* Laptop IS A Computer
+* Phone IS A ElectronicDevice
+
+
+
+Manager boss = new Manager (.....);
+
+boss.setBonus (5000); 		// Manager method
+boss.setName ("Frankie"); 	// Employee method
+
+boss.setSalary (4000);		// Employee method
+
+System.out.println ("Name: " + boss.getName() );	// Employee method
+
+System.out.println ("Name: " + boss.getSalary() );	// Employee method
+
+
+Employee
+* General class for any type of employee
+* has the data and methods to handle all types of Employees
+
+Manager
+* more specialised / more focused class - only for Managers
+* only the data and methods that deal with Managers
+
+
+public
+private
+protected
+
+public class Manager extends Employee
+{
+   private double bonus;
+
+   public void setBonus (double bonus)
+   {
+   	this.bonus = bonus;
+   }
+
+   @Override
+   public void getSalary ()
+   {
+   	//return salary + bonus;   // ERROR
+   	return super.getSalary() + bonus;
+   }
+
+   @Override
+	public String toString()
+	{
+		return super.toString() + "\t" + bonus;
+	}
+}
+
+
+
+
+Manager boss = new Manager (.....);
+
+boss.setBonus (5000); 		// Manager method
+boss.setName ("Frankie"); 	// Employee method
+
+boss.setSalary (4000);		// Employee method
+
+System.out.println ("Name: " + boss.getName() );	// Employee method
+
+System.out.println ("Name: " + boss.getSalary() );	// Manager method (was Employee)
+
+
+@Override
+Java does extra checking at compile time to make sure the exact same method
+exists i a parent class (a super class).
+The header for method in the subclass must exactly match the superclass
+same access modifier, same return type, same name, same parameters, same order of parameters, etc
+Programmers friend
+If you have a method with the same name in super and sub classes, make sure you @Override
+
+
+System.out.println (boss); // Uppercase ToString in Manager
+@Manager: 341289E
+
+System.out.println (boss.ToString() ); // Frankie .... 4000
+
+System.out.println (boss);  // Correct case toString in Manager
+// Frankie .... 4000
+
+
+Employee fred = new Employee (.....);
+fred.getSalary()  // Employee getSalary will be called
+
+Manager boss = new Manager (.....);
+boss.getSalary()   // Manager getSalary will be called.
+
+
+
+
+public class Manager extends Employee
+{
+   private double bonus;
+
+   public Manager ()
+   {
+      //super ("", 0, 0, 0, 0);
+      //bonus = 0;
+      this ("", 0, 0, 0, 0, 0);
+   }
+
+   public Manager (String name, double salary, int year, int month, int day)
+   {
+      //super (name, salary, year, month, day);
+      //bonus = 0;
+      this (name, salary, year, month, day, 0);
+   }
+
+   public Manager (String name, double salary, int year, int month, int day, double bonus)
+   {
+      super (name, salary, year, month, day);
+      this.bonus = bonus;
+   }
+
+   public Manager (String name, int year, int month, int day)
+   {
+      //super (name, 0, year, month, day);
+      //bonus = 0;
+      this (name, 0, year, month, day, 0);
+   }
+
+   public void setBonus (double bonus)
+   {
+   	this.bonus = bonus;
+   }
+
+   @Override
+   public void getSalary ()
+   {
+   	//return salary + bonus;   // ERROR
+   	return super.getSalary() + bonus;
+   }
+
+   @Override
+	public String toString()
+	{
+		return super.toString() + "\t" + bonus;
+	}
+}
+
+
+Manager boss1 = new Manager ("Frankie", 4000, 2020, 07, 01);
+Manager boss2 = new Manager ("Bella",   5000, 2020, 07, 01, 1000);
+Manager boss3 = new Manager ("Sam",     2020, 07, 14);
+Manager boss4 = new Manager ();
+
+
+What Constructors should you provide:
+* A Default Constructor
+* At least one Parameterised Constructor that initialises all of the required data
+* And any other Parameterised Constructors that make sense for your application / needs
+
+* Accessor for each instance field
+* Mutators for each instance field
+* toString
+
+
+
+*** Casting
+
+Manager IS A Employee
+Employee is NOT a Manager
+
+
+Manager boss = new Manager ();
+Employee emp = (Employee) boss; // OK: Manager IS A Employee
+
+Employee emp2 = new Employee ();
+Manager boss2 = (Manager) emp2; // ERROR: Employee is NOT a Manager
+
+
+
+*** Object
+
+public class MyClass
+{
+}
+
+public class MyClass extends Object
+{
+}
+
+MyClass my = new MyClass();
+System.out.println (my);
+@MyClass: 436241
+
+
+if (obj instanceof Employee)
+{
+   Employee emp = (Employee) obj;
+}
+
+
+if (emp1.equals(emp2) == true)
+{
+  ////
+}
+else
+{
+  ////
+}
+
+
+
+What should you provide for each Data Class
+* A Default Constructor
+* At least one Parameterised Constructor that initialises all of the required data
+* And any other Parameterised Constructors that make sense for your application / needs
+* Accessor for each instance field
+* Mutators for each instance field
+* toString
+* equals
+
+
+
+public class Employee
+{
+}
+
+
+public class EmployeeArray extends Employee // NO !!!! Inheritance Abuse
+{
+}
+
+public class EmployeeArray
+{
+	// Composition
+	private ArrayList<Employee> emps = new ArrayList<Employee> (); // Nice !!  :)
+	::::
+
+}
+
+Vehicles
+- Cars
+- Trucks
+- etc
+
+Critical / KEY questions
 
 EOF.
