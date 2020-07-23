@@ -39,4 +39,19 @@ THIS WEEK:  Week 3
 Week 1 and 2's lecture class videos uploaded on 23-Jul-2020:
 * Mike O'Malley's Java Videos: http://tinyurl.com/MikesJavaVideos
 
+Clarifications from Last Week:
+
+* The call to the super class Constructor must be the 1st Java statement.
+
+* Comments are allowed before the super class constructor call.  This is fine:
+
+   public Manager (String name, double salary, int year, int month, int day, double bonus)
+   {
+      // Call super
+      super (name, salary, year, month, day);
+      this.bonus = bonus;
+   }
+
+* Use @Override when you create an equals() method for your classes - we are overriding the equals() method in the object class, same as for toString().
+
 EOF.

@@ -1,3 +1,11 @@
+/*
+
+Mike O fixed / added:
+* Default Constructor.
+* @Override for equals() method.
+* default date if no date supplied: 01-01-2000.
+* @Override for getSalary() method.
+*/
 public class Manager extends Employee
 {
    private double bonus;
@@ -6,7 +14,7 @@ public class Manager extends Employee
    {
       //super ("", 0, 0, 0, 0);
       //bonus = 0;
-      this ("", 0, 0, 0, 0, 0);
+      this ("", 0, 2000, 01, 01, 0);
    }
 
    public Manager (String name, double salary, int year, int month, int day)
@@ -18,6 +26,7 @@ public class Manager extends Employee
 
    public Manager (String name, double salary, int year, int month, int day, double bonus)
    {
+      // Call super
       super (name, salary, year, month, day);
       this.bonus = bonus;
    }
@@ -41,6 +50,7 @@ public class Manager extends Employee
       return super.getSalary() + bonus;
    }
 
+   @Override
    public boolean equals(Object otherObject)
    {
       if (super.equals(otherObject) == false)
@@ -51,13 +61,6 @@ public class Manager extends Employee
       // super.equals checked that this and other belong to the same class
       return bonus == other.bonus;
    }
-
-   /*@Override
-   public String toString()
-   {
-    return super.toString() + "\t" + bonus;
-   }
-   */
 
    @Override
    public String toString()

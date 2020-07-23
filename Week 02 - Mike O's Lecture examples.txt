@@ -297,7 +297,7 @@ What should you provide for each Data Class
 * At least one Parameterised Constructor that initialises all of the required data
 * And any other Parameterised Constructors that make sense for your application / needs
 * Accessor for each instance field
-* Mutators for each instance field
+* Mutator for each instance field
 * toString
 * equals
 
@@ -326,5 +326,21 @@ Vehicles
 - etc
 
 Critical / KEY questions
+
+
+
+*** CORRECTIONS / CLARIFICATIONS:
+
+* The call to the super class Constructor must be the 1st Java statement.
+
+* Comments are allowed before the super class constructor call.  This is fine:
+
+   public Manager (String name, double salary, int year, int month, int day, double bonus)
+   {
+      // Call super
+      super (name, salary, year, month, day);
+      this.bonus = bonus;
+   }
+
 
 EOF.

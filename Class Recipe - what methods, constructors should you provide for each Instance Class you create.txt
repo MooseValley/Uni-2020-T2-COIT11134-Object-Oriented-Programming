@@ -1,0 +1,1 @@
+Class Recipe: what methods, constructors should you provide for each Instance Class you create
