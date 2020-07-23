@@ -36,4 +36,7 @@ LAST WEEK:  Week 2
 THIS WEEK:  Week 3
 * Week 03 - Polymorphism
 
+Week 1 and 2's lecture class videos uploaded on 23-Jul-2020:
+* Mike O'Malley's Java Videos: http://tinyurl.com/MikesJavaVideos
+
 EOF.
