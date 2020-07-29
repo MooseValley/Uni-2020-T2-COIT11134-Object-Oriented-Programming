@@ -39,7 +39,9 @@ THIS WEEK:  Week 3
 Week 1 and 2's lecture class videos uploaded on 23-Jul-2020:
 * Mike O'Malley's Java Videos: http://tinyurl.com/MikesJavaVideos
 
-Clarifications from Last Week:
+
+
+*** Clarifications from Last Week:
 
 * The call to the super class Constructor must be the 1st Java statement.
 
@@ -53,5 +55,396 @@ Clarifications from Last Week:
    }
 
 * Use @Override when you create an equals() method for your classes - we are overriding the equals() method in the object class, same as for toString().
+
+*  Not in the slides last week ... but important:  in Java, each class can have at most 1 parent (1 superclass).  So this would be an ERROR:  public class .... extends Class1, Class2
+
+
+
+*** Review / Recap - IS A, Inheritance
+
+public class Employee
+public class Manager extends Employee
+
+Which of these are correct ?  Why ?
+
+Employee e1 = new Employee ();
+Employee e2 = new Manager  ();
+
+Manager e3  = new Manager  ();
+Manager e4  = new Employee ();  // ERROR
+
+Employee
+   |
+   V
+Manager
+
+
+ArrayList<Employee> staff = new ArrayList<Employee> ();
+
+staff.add (new Employee (......) );
+staff.add (new Manager  (......) );
+
+
+
+*** Review: Last Week's Tutorial Question: Vehicle, Car, Truck inheritance
+
+As I said last week, one of the KEY questions of the term.
+You will be using what you learned in this question for the rest of the term.
+
+
+public class Vehicle
+public class Car   extends Vehicle
+public class Truck extends Vehicle
+
+public class SportsCar   extends Car
+public class MotorBike   extends Vehicle
+
+public class ItalianSportsCar   extends SportsCar
+public class USSportsCar        extends SportsCar
+
+
+Vehicle v1 = new Vehicle (...);
+Car c1     = new Car     (....);
+Truck t1   = new Truck   (....);
+
+// Array
+Vehicle[] vehicles = new Vehicle[20];
+
+// Polymorphic data:
+vehicles[0] = new Vehicle (....);
+vehicles[1] = new Vehicle (....);
+vehicles[2] = new Car     (....);
+vehicles[3] = new Truck   (....);
+::::
+vehicles[9] = new Employee (....); // ERROR
+
+
+
+// Calculate the Total Number of Car Passengers
+int totalPassengers = 0;
+for (int k = 0; k < vehicles.length; k++)
+{
+    // Is the object a car ????
+    // If yes, then add the passengers onto the total
+    if (vehicles[k] instanceof Car)
+    {
+       // Typecast to Car to keep Java happy.  :)
+       //totalPassengers = totalPassengers + ((Car) vehicles[k]).getPassengers();
+       totalPassengers += ((Car) vehicles[k]).getPassengers();
+    }
+}
+
+// Calculate the Avg Truck Capacity
+double totalCapacity = 0.0;
+int    truckCount    = 0;
+for (int k = 0; k < vehicles.length; k++)
+{
+    // Is the object a Truck ????
+    // If yes, then add the capacity onto the total
+    if (vehicles[k] instanceof Truck)
+    {
+       // Typecast to Truck to keep Java happy.  :)
+       totalCapacity += ((Truck) vehicles[k]).getCapacity();
+       truckCount++;
+    }
+}
+double avgCapacity = 0.0;
+if (truckCount > 0)
+    avgCapacity = totalCapacity / truckCount;
+
+
+Person
+Employee Manager
+CEO
+Admin
+programmer
+
+Any type of data in an array ??
+
+Object[] myArray = new Object [100];
+myArray[0] = new Date();
+myArray[1] = new Car (....);
+
+instanceof
+
+
+
+
+Person (Abstract)
+
+Employee
+
+Manager Admin Programmer
+
+CEO
+
+
+
+
+Abstract classes
+can be a template for all of the subclasses in the hierarchy
+e.g. you can say what method(s) the other classes need to provide.
+
+Person mike = new Person (); // ERROR - abstract class
+
+
+Concrete Class
+can be instantiated.  i.e. can create objects of the class.
+
+Student fred = new Student("Fred", "IT"); // OK
+
+If a class:
+* has NO abstract methods
+* is NOT declared to be Abstract
+* and it provides the full implementation for any methods that were declared Abstract higher in the class hierarchy.
+==> Then it is a Concrete class
+
+
+
+
+public abstact class GameObject
+	public abstract int     getHitPoints();
+	public abstract void    doDamage(int hitPoints);
+	public abstract boolean isImmuneToDamage();
+
+public class HumanPlayer extends GameObject
+
+public class FlameMonster extends GameObject
+
+public class BossMonster extends GameObject
+
+
+Q. Maybe I missed this part, but what's the point of using an abstract class, couldn't you just use a non-abstract class as a "template" as well?
+
+YES.
+
+
+
+*** Polymorphism
+
+Many forms
+
+Overloading - methods
+Polymorphism - used for data
+
+
+Manager ()
+Manager (name)
+Manager (name, bonus)
+
+Mannager m1 = new Manager();
+Mannager m2 = new Manager("Mike");
+Mannager m2 = new Manager("Mike", 100);
+
+
+
+ArrayLists<String> strings = new ArrayLists<String> ();
+strings.add ("Mike");
+
+add (myLabel);
+myPanel.add (myButton);
+
+add (menuBar);
+
+
+Multiple methods with the same name ...
+which add() method gets called depends on context and parameters.
+
+Overloading.
+
+
+
+*** BAD OLD Daze:
+
+ArrayLists<String> strings = new ArrayLists<String> ();
+strings.addStingToArrayList ("Mike");
+
+addLabelToFrame (myLabel);
+myPanel.addButtonToPanel (myButton);
+
+addMenuBarToFrame (menuBar);
+
+
+
+*** Polymorphism
+
+Many forms
+
+Vehicle[] vehicles = new Vehicle[20];
+
+// Polymorphic data:
+vehicles[0] = new Vehicle (....);
+vehicles[1] = new Vehicle (....);
+vehicles[2] = new Car     (....);
+vehicles[3] = new Truck   (....);
+
+::::
+
+// Calculate the Avg Truck Capacity
+double totalCapacity = 0.0;
+int    truckCount    = 0;
+for (int k = 0; k < vehicles.length; k++)
+{
+    // Is the object a Truck ????
+    // If yes, then add the capacity onto the total
+	// IS A
+	if (vehicles[k] instanceof  Truck)
+	{
+	   totalCapacity += ((Truck) vehicles[k]).getCapacity ();
+
+		// OR:
+	   Truck t1 = (Truck) vehicles[k];
+	   totalCapacity += t1.getCapacity ();
+	}
+}
+
+
+for (Vehicle v : vehicles)
+{
+	if (v instanceof  Truck)
+	{
+		totalCapacity += ((Truck) v).getCapacity ();
+
+		// OR:
+		Truck t1 = (Truck) v;
+		totalCapacity += t1.getCapacity ();
+	}
+}
+
+
+Static Binding
+Java can work out which method to call at compile time.
+
+Dynamic Binding
+Java can work out which method call at run-time.
+
+
+
+*** Slide 17:
+
+Manager m1 = new Manager ("Carl Cracker", 80000, 1987, 12, 15);
+m1.setBonus (5000);
+staff[0] = m1;
+
+
+staff[0] = new Manager ("Carl Cracker", 80000, 1987, 12, 15);
+staff[0].setBonus (5000);
+
+((Manager) staff[0]).setBonus (5000);
+
+
+ArrayList<Employee> staffArrayList = new ArrayList<Employee> ();
+
+staffArrayList.add (new Employee ("Frankie", 50000, 2020, 07, 01) );
+
+
+Manager m1 = new Manager ("Carl Cracker", 80000, 1987, 12, 15);
+m1.setBonus (5000);
+//staff[0] = m1;
+staffArrayList.add (m1);
+
+
+//staff[0] = new Manager ("Carl Cracker", 80000, 1987, 12, 15);
+//((Manager) staff[0]).setBonus (5000);
+
+((Manager) staffArrayList.get (staffArrayList.size() - 1)).setBonus (5000);
+
+
+
+// IS A
+
+Manager IS A Employee
+	So you could create an array of Employee [] ... and then store Managers in it.
+
+Employee IS NOT a MANAGER
+
+	So you could NOT create an array of Manager [] ... and then store employees in it.
+
+
+
+Person
+ |
+Employee
+ |        \      \
+Manager  Admin	Programmer
+ |
+CEO
+
+Manager[] managers = ....
+	can store Managers and CEOs
+
+Person[]
+	can store Person, Employee, manager, Admin, Programmer, CEO
+
+
+
+
+Q.  so, polymorphism have a similar concept with method overloading?
+
+Many Forms
+
+
+
+No Object class
+No Polymorphism
+
+
+
+*** ACTIVITY #1
+
+public abstract class Employee
+
+	public abstract double getEarnings ();
+
+	private String name;
+	private double salary;
+
+
+	// Constructors
+	// Accessors
+	// Mutators
+	// toString
+	// equals
+
+
+public class Manager extends Employee
+	private double bonus;
+
+	// Constructors
+	// Accessors
+	// Mutators
+	// toString
+	// equals
+
+	public Manager (String name, double salary, double bonus)
+	{
+		super (name, salary);
+		this.bonus = bonus;
+	}
+
+	public double getEarnings ()
+	{
+		return super.getSalary() + bonus;
+	}
+
+
+public class Programmer extends Employee
+	private int extraHolidayWeeks;
+
+	// Constructors
+	// Accessors
+	// Mutators
+	// toString
+	// equals
+
+	public Programmer (String name, double salary, int extraHolidayWeeks)
+	{
+	}
+
+	public double getEarnings ()
+	{
+		return super.getSalary();
+	}
+
 
 EOF.
