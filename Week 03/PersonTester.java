@@ -2,11 +2,12 @@ public class PersonTester
 {
    public static void main (String[] args)
    {
-      // ERROR: cannot instantiate an Abstract class.
-      Person p1 = new Person ("Frankie");
-      System.out.println (p1.getName() );
+      // Cannot instantiate / create objects of the class because Person is Abstract
+      //Person p1 = new Person ("Mike");
 
-      Student s1 = new Student ("Mike", "IT");
-      System.out.println (s1.getName() + " " + s1.getDescription());
+      // This is perfectly OK:
+      Student s1 = new Student ("Frankie", "IT");
+      System.out.println (s1.getName() + " " + s1.getDescription() );
+
    }
 }
