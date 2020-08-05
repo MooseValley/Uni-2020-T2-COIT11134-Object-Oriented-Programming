@@ -50,7 +50,9 @@ Course Forums:
 
 Ass 2:
 * A strategy for dealing with multiple input "screens".
-
+* Walk through Ass 2 spec
+* Students: write pseudo code for Create Owner
+* Students: write pseudo code for Edit Owner
 
 
 EOF.
