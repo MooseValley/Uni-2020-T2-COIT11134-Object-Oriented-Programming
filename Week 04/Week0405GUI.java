@@ -90,35 +90,10 @@ public class Week0405GUI extends JFrame
       g.drawImage (icon, 0, 0, null);
    }
 
-   public static int compareStringLengths (String first, String second)
-   {
-      if (first.length() < second.length())
-         return -1;
-      else if (first.length() > second.length())
-         return 1;
-      else
-         return 0;
-   }
 */
 
    public static void main (String[] args)
    {
-/*
-      (String first, String second) ->
-         {
-            if (first.length() < second.length())
-               return -1;
-            else if (first.length() > second.length())
-               return 1;
-            else
-               return 0;
-         }
-
-      int result = ("Mike", "Frankie");
-
-      int result = compareStringLengths ("Mike", "Frankie");
-      System.out.println (result);
-*/
       //Week0405GUI app = new Week0405GUI();
 
       //new Week0405GUI();

@@ -6,6 +6,7 @@ Course Coordinator:          Farzad Sanati, f.sanati@cqu.edu.au, Townsville
 Rocky Teacher (Part-Time):   Mike O'Malley, m.omalley@cqu.edu.au
 Mike O'Malley's GitHub:      https://github.com/MooseValley/Uni-2020-T2-COIT11134-Object-Oriented-Programming
 Mike O'Malley's Java Videos: http://tinyurl.com/MikesJavaVideos
+Textbook:	Core Java Volume I--Fundamentals, 11th Edition by Cay S. Horstmann
 ******************************************************
 
 CLASS STARTING SOON.  :)
@@ -35,5 +36,21 @@ LAST WEEK:  Week 4
 
 THIS WEEK:  Week 5
 * Week 05 - GUI and Event Handling.  Next week: mid-term break
+
+
+Items from last week:
+* Lamda code
+* JSlider with labels and painted ticks
+* Input dialog with combobox
+* PopupMenus
+* Anything else you want !!  :)
+
+Course Forums:
+* Copy Constructor
+
+Ass 2:
+* A strategy for dealing with multiple input "screens".
+
+
 
 EOF.
