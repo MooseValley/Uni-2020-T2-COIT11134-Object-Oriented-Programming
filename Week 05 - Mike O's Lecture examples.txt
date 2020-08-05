@@ -36,21 +36,31 @@ LAST WEEK:  Week 4
 
 THIS WEEK:  Week 5
 * Week 05 - GUI and Event Handling.  Next week: mid-term break
+* Assignment 1
+* Assume everyone has read the specification by now.
 
 
 Items from last week:
 * Lamda code
+	Not required for this course - Let's focus on Ass 2 for this class.
+	In this course, all you need Lambdas for is to hook up methods to events (button click, Timer, etc)
 * JSlider with labels and painted ticks
+	See Mike's Java code.
 * Input dialog with combobox
+	Not required for this course - Let's focus on Ass 2 for this class.
 * PopupMenus
+	Not required for this course - Let's focus on Ass 2 for this class.
 * Anything else you want !!  :)
 
 Course Forums:
-* Copy Constructor
+* Ass 1: Copy Constructor to:
+		Week 2: Employee
+		Add auto-allocation of an ID and update.
 
-Ass 2:
+Ass 1:
 * A strategy for dealing with multiple input "screens".
-* Walk through Ass 2 spec
+	See Mike's Java code.
+* Walk through Ass 1 spec
 * Students: write pseudo code for Create Owner
 * Students: write pseudo code for Edit Owner
 
