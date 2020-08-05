@@ -11,6 +11,10 @@ Desc:   This code builds a very simple GUI with 3 main panels, which are control
         It is highly recommended that students Story Board their GUI designs (panels, components, etc)
         and name them with nice meaningful names, and then write the code to support their design.
         This will ensure the smoothest path to success.
+
+        Note: we could also achieve a similar result even more simply by using a JTabbedPane
+        or a CardLayout ... but neither are officially covered in this course or the prior course.
+        So the code below "uses what we have covered so far".
 */
 
 import javax.swing.*;
