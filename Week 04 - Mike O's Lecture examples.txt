@@ -36,4 +36,115 @@ LAST WEEK:  Week 3
 THIS WEEK:  Week 4
 * Week 04 - GUI and Event Handling
 
+
+Q.  I noticed when I made a 2nd gui which I opened inside my main gui. The exit_on_close would close both, how would you avoid that?
+
+A. Mult-frame Java projects are sort of an advanced topic.
+Avoid.
+JFrame + TabbedPane or CardLayout pane
+
+
+Q.  what is the use of null in g.drawImage(image, 0, 0, null); ?
+
+g.drawImage(image, 0, 0, new ImageObserver() );
+
+
+
+*** Lambda - Java 7+
+
+JButton myButton = new JButton ("Calc");
+::::
+
+myButton.addActionListener (event -> calc() );
+myButton.addActionListener (event -> calc() );
+myButton.addActionListener (event -> calc() );
+myButton.addActionListener (event -> saveToFile() );
+myButton.addActionListener (event -> updateDisplay() );
+
+
+
+Slide 21:
+Replace all code with the new, simpler Lambda way:
+
+JButton okButton = new JButton ("OK");
+okButton.addActionListener (event -> performWhatever() );
+
+private void performWhatever()
+{
+  // Code goes here ....
+}
+
+
+*** Slide 22:
+
+exitButton.addActionListener (event -> System.exit (0) );
+
+** Slide 23:
+
+JButton yellowButton = new JButton ("Yellow");
+yellowButton.addActionListener (event -> buttonPanel.setBackground (Color.YELLOW) );
+buttonPanel.add (yellowButton);
+
+
+Timer t = new Timer (1000, event -> updateTime() );
+t.start();
+
+
+
+*** Slide 26:  BorderLayout
+
+import java.awt.*;
+
+
+setLayout (new BorderLayout () );
+
+// By default, JFrame has a BorderLayout.
+
+	add (myButton, BorderLayout.NORTH);
+
+	add (myPanel);
+OR:
+	add (myPanel, BorderLayout.CENTER);
+
+
+5 regions and each region can only contain 1 component.
+
+
+	add (myButton1, BorderLayout.NORTH);
+	add (myButton2, BorderLayout.NORTH);
+
+==> All we will see is myButton2 - myButton1 is kicked out.
+
+
+
+
+*** TextArea
+multiple lines of text.
+
+JTextArea myTextArea     = new JTextArea();
+JScrollPane myScrollPane = new JScrollPane (myTextArea);
+
+myScrollPane.setVerticalScrollBarPolicy (ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+
+
+
+*** Menus
+
+Menus
+Popup Menus
+
+pasteItem.addActionListener (event -> pasteTextFromClipboard() );
+
+private void pasteTextFromClipboard()
+{
+   ////
+}
+
+
+* Lamda code
+* JSlider with labels and painted ticks
+* Input dialog with combobox
+* PopupMenus
+* Anything else you want !!  :)
+
 EOF.
