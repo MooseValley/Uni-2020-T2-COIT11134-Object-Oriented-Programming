@@ -37,7 +37,7 @@ LAST WEEK:  Week 4
 THIS WEEK:  Week 5
 * Week 05 - GUI and Event Handling.  Next week: mid-term break
 * Assignment 1
-* Assume everyone has read the specification by now.
+* Assume everyone has read the specification by now. :)
 
 
 Items from last week:
@@ -52,17 +52,27 @@ Items from last week:
 	Not required for this course - Let's focus on Ass 2 for this class.
 * Anything else you want !!  :)
 
-Course Forums:
-* Ass 1: Copy Constructor to:
-		Week 2: Employee
-		Add auto-allocation of an ID and update.
 
 Ass 1:
+* Default Constructor - recap - see Week 1
+* System assigned id - recap - see Week 1
+* Validation of user inputs - recap from prior course
+* Copy Constructor
 * A strategy for dealing with multiple input "screens".
+	We have not covered JTabbedPane or CardLayout ...
 	See Mike's Java code.
 * Walk through Ass 1 spec
 * Students: write pseudo code for Create Owner
 * Students: write pseudo code for Edit Owner
+
+
+What about:
+* Display all vehicles ?
+* Display all vehicles for owner ?
+* Save to / Load from file ?
+* Exception Handling ?
+* etc
+* Maybe in Ass 2 ???
 
 
 EOF.
