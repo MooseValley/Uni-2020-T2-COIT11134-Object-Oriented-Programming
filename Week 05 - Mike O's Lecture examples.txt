@@ -36,34 +36,42 @@ LAST WEEK:  Week 4
 
 THIS WEEK:  Week 5
 * Week 05 - GUI and Event Handling.  Next week: mid-term break
-* Assignment 1
 * Assume everyone has read the specification by now. :)
+* Assignment 1 Spec
+	* Walk through Ass 1 spec
+	* Read the Question / Highlight Keywords
+	* Story Boards
+		See Mike O's story boards
+	* Divide and Conquer
+	* Pseudo Code - plan out what you need to do and how
+	* Students: write pseudo code for Create Owner
+	* Students: write pseudo code for Edit Owner
+* Assignment 1 - related topics
+	* Default Constructor - recap - see Week 1
+	* Copy Constructor
+	* System assigned id - recap - see Week 1
+	* Validation of user inputs - recap from prior course - see below
+	* Copy Constructor
+	* A strategy for dealing with multiple data entry / display "screens".
+		CardLayout ...
+		See Mike's Demo Java code: "Week 05/MultipleCenterPanelsControlledByButtonsCardLayout.java"
 
 
-Items from last week:
-* Lamda code
-	Not required for this course - Let's focus on Ass 2 for this class.
+Items from last week: (that we were going to tackle this week)
+* Lamda code - more "advanced" examples, uses
+	Will cover later if needed - Let's focus on Ass 1 for this class.
 	In this course, all you need Lambdas for is to hook up methods to events (button click, Timer, etc)
 * JSlider with labels and painted ticks
 	See Mike's Java code.
 * Input dialog with combobox
-	Not required for this course - Let's focus on Ass 2 for this class.
+	Will cover later if needed - Let's focus on Ass 1 for this class.
 * PopupMenus
-	Not required for this course - Let's focus on Ass 2 for this class.
+	Will cover later if needed - Let's focus on Ass 1 for this class.
 * Anything else you want !!  :)
 
 
-Ass 1:
-* Default Constructor - recap - see Week 1
-* System assigned id - recap - see Week 1
-* Validation of user inputs - recap from prior course
-* Copy Constructor
-* A strategy for dealing with multiple input "screens".
-	We have not covered JTabbedPane or CardLayout ...
-	See Mike's Java code.
-* Walk through Ass 1 spec
-* Students: write pseudo code for Create Owner
-* Students: write pseudo code for Edit Owner
+
+
 
 
 What about:
@@ -73,6 +81,116 @@ What about:
 * Exception Handling ?
 * etc
 * Maybe in Ass 2 ???
+
+
+
+Want more:
+* Programming - How to Solve, Start, Do Big Programming Assignments and Projects - Part 01
+https://youtu.be/F-Hwrj_SSBc
+* Programming - How to Solve, Start, Do Big Programming Assignments and Projects - Part 02
+https://youtu.be/BSyLgVCQlcA
+* And many dozens of other step by step tutorial solving, GUI app building, etc videos here:
+http://tinyurl.com/MikesJavaVideos
+
+
+
+******************************************************
+Borders and Frames
+******************************************************
+
+import javax.swing.border.*;
+
+      myPanel.setBorder (new TitledBorder (new EtchedBorder(), " My Title: "));
+
+
+******************************************************
+What Belongs Where ???  Where should particular functionality (methods) go ?
+******************************************************
+
+Inheritance hierarchy:
+
+Employee
+	-> Manager
+
+Suppose we have this setup:
+
+	GUI Class (the user interface)
+	  - Employee Class
+	  - Manager Class
+
+The idea of OOP is that every class is self contained - all of the data and the methods that work on that data are contained in a single unit, called a class.
+
+Where should Employee data be stored ?
+Where should Manager data be stored ?
+
+Where should Employee data be checked / validate ?
+Where should the error message text be created if Employee data is invalid ?
+Where should error messages be displayed if Employee data is invalid ?
+
+Where should Manager data be checked / validate ?
+Where should the error message text be created if Manager data is invalid ?
+Where should error messages be displayed if Manager data is invalid ?
+
+
+******************************************************
+Validation of user inputs - recap from prior course
+******************************************************
+
+Probably the same as what you did for Assignment 2 in the prior course ???
+If not, you definitely would have done this when answering various tutorial and text book questions for the prior course.
+
+NOTE: if we had covered Exception Handling we would NOT do it like this !
+NOTE: if we had covered Exception Handling we would NOT do it like this !
+NOTE: if we had covered Exception Handling we would NOT do it like this !
+
+
+// *** PSEUDO CODE ***
+// *** PSEUDO CODE ***
+// *** PSEUDO CODE ***
+
+// For what happens when user clicks Add, Save, .....
+
+if (input #1 is blank or invalid)
+	Select / place cursor in the GUI component with the input error, highlight red, etc ???
+	Display meaningful Error message
+	Abort further processing
+
+if (input #2 is blank or invalid)
+	Select / place cursor in the GUI component with the input error, highlight red, etc ???
+	Display meaningful Error message
+	Abort further processing
+
+if (input #3 is blank or invalid)
+	Select / place cursor in the GUI component with the input error, highlight red, etc ???
+	Display meaningful Error message
+	Abort further processing
+
+::: etc for ALL other inputs
+
+// Everything is OK
+Do whatever processing is required ...
+- Create object
+- Add to Array / ArrayList or whatever
+
+
+******************************************************
+CardLayout
+******************************************************
+A strategy for dealing with multiple data entry / display "screens".
+
+Also see Mike's Demo Java code: "Week 05/MultipleCenterPanelsControlledByButtonsCardLayout.java"
+
+   private JPanel      cardLayoutPanel                 = new JPanel (new CardLayout());
+   private CardLayout  cardLayout                      = (CardLayout)(cardLayoutPanel.getLayout() );
+
+      cardLayoutPanel.add (loadingDataPanel, "loadingDataPanel");
+      cardLayoutPanel.add (mainPanel,        "mainPanel");
+      add (cardLayoutPanel,  BorderLayout.CENTER);
+
+      cardLayout.show(cardLayoutPanel, "mainPanel");
+      cardLayout.show(cardLayoutPanel, "loadingDataPanel");
+
+
 
 
 EOF.
