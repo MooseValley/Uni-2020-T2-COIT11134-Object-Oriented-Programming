@@ -36,26 +36,25 @@ LAST WEEK:  Week 4
 
 THIS WEEK:  Week 5
 * Week 05 - GUI and Event Handling.  Next week: mid-term break
-* Assume everyone has read the specification by now. :)
+* Assume everyone has read the Assignment 1 specification by now. :)
 * Assignment 1 Spec
 	* Walk through Ass 1 spec
 	* Read the Question / Highlight Keywords
-	* Story Boards
-		See Mike O's story boards
+	* Story Boards - see Mike O's story boards
 	* Divide and Conquer
 	* Pseudo Code - plan out what you need to do and how
 	* Students: write pseudo code for Create Owner
 	* Students: write pseudo code for Edit Owner
+
 * Assignment 1 - related topics
 	* Default Constructor - recap - see Week 1
 	* Copy Constructor
 	* System assigned id - recap - see Week 1
 	* Validation of user inputs - recap from prior course - see below
-	* Copy Constructor
 	* A strategy for dealing with multiple data entry / display "screens".
-		CardLayout ...
-		See Mike's Demo Java code: "Week 05/MultipleCenterPanelsControlledByButtonsCardLayout.java"
-
+		CardLayout ... see Mike's Demo Java code: "Week 05/MultipleCenterPanelsControlledByButtonsCardLayout.java"
+	* Borders and Frames
+	* What Belongs Where ???  Where should particular functionality (methods) go ?
 
 Items from last week: (that we were going to tackle this week)
 * Lamda code - more "advanced" examples, uses
