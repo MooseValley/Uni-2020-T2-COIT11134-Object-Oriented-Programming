@@ -50,11 +50,13 @@ THIS WEEK:  Week 5
 	* Default Constructor - recap - see Week 1
 	* Copy Constructor
 	* System assigned id - recap - see Week 1
-	* Validation of user inputs - recap from prior course - see below
+	* Validation of user inputs - recap from prior course - see below.
+	* StoryBoard - see Mike's DRAFT and Incomplete Story Boards for Ass 1
+	  -> REF: assignment01-MooseValley\Story Boards - Mike O.pptx
 	* A strategy for dealing with multiple data entry / display "screens".
 		CardLayout ... see Mike's Demo Java code: "Week 05/MultipleCenterPanelsControlledByButtonsCardLayout.java"
-	* Borders and Frames
-	* What Belongs Where ???  Where should particular functionality (methods) go ?
+	* Borders and Frames - see below.
+	* What Belongs Where ???  Where should particular functionality (methods) go ?   See below.
 
 Items from last week: (that we were going to tackle this week)
 * Lamda code - more "advanced" examples, uses
