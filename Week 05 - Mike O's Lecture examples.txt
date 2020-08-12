@@ -41,6 +41,7 @@ THIS WEEK:  Week 5
 	* Walk through Ass 1 spec
 	* Read the Question / Highlight Keywords
 	* Story Boards - see Mike O's story boards
+	  -> REF: assignment01-MooseValley\Story Boards - Mike O.pptx
 	* Divide and Conquer
 	* Pseudo Code - plan out what you need to do and how
 	* Students: write pseudo code for Create Owner
@@ -51,12 +52,15 @@ THIS WEEK:  Week 5
 	* Copy Constructor
 	* System assigned id - recap - see Week 1
 	* Validation of user inputs - recap from prior course - see below.
+	* What Belongs Where ???  Where should particular functionality (methods) go ?   See below.
 	* StoryBoard - see Mike's DRAFT and Incomplete Story Boards for Ass 1
 	  -> REF: assignment01-MooseValley\Story Boards - Mike O.pptx
+	* Borders and Frames - see below.
 	* A strategy for dealing with multiple data entry / display "screens".
 		CardLayout ... see Mike's Demo Java code: "Week 05/MultipleCenterPanelsControlledByButtonsCardLayout.java"
-	* Borders and Frames - see below.
-	* What Belongs Where ???  Where should particular functionality (methods) go ?   See below.
+
+
+
 
 Items from last week: (that we were going to tackle this week)
 * Lamda code - more "advanced" examples, uses
@@ -74,6 +78,55 @@ Items from last week: (that we were going to tackle this week)
 
 
 
+*** Create Owner
+
+* Enable / show the relevant panel
+  - onwerPanel.setVisible (true);
+
+* enable / disable GUI components as needed
+   saveButton.setEnabled (true);
+   ::::
+* based in Radiobuttons / Combobox (private, corporate)
+    - determine what type of owner is being inputted
+
+* set heading text
+* Save clicked: Send user input to validation methods
+    - determine what type of owner is being inputted
+      if Corporate, check ABN
+      if Private, check DOB
+    - Check input #1, if error display error message and stop
+      Name: only alphabetic letters and spaces, NO digits or anything else
+         > get input from user as String
+         > loop though each character of input and count invalid chars
+         > if invalid chars > 0 ==> error
+    - Check input #2, if error display error message and stop
+    - Check input #3, if error display error message and stop
+    - If all OK, inputting the data in the array (store in arraylist)
+      > display entered data get confirmation from user to add ???
+      > create an object from the data
+      > add to arraylist
+* Cancel
+ - confirm cancel
+ - if Yes, hide panel, re-enable main buttons
+
+
+*** Edit Owner
+
+Is array empty ?  Yes - display error and stop
+Otherwise, prompt user to enter a ownerId (inputdialog)
+search array for ownerId
+if found, popupare inputs fields ....
+if not found, display error and stop
+if user clicks save ...
+if user clicks Cancel
+
+
+
+2 ArrayLists
+- one for Owners
+- one for Vehicles
+
+
 
 What about:
 * Display all vehicles ?
@@ -82,6 +135,12 @@ What about:
 * Exception Handling ?
 * etc
 * Maybe in Ass 2 ???
+
+public class VehicleArrayList
+public class OwnerArrayList
+==> Assignment 2
+
+generic classes / generic methods
 
 
 
@@ -93,6 +152,24 @@ https://youtu.be/BSyLgVCQlcA
 * And many dozens of other step by step tutorial solving, GUI app building, etc videos here:
 http://tinyurl.com/MikesJavaVideos
 
+
+
+public class Employee
+{
+   private static int nextId = 100;
+   private static final String NUMBER_PLATE_PREFIX = "ABC";
+
+	//private int id;
+	private String id;
+	:::: etc
+
+   public Employee ()
+   {
+      //nextId++;
+      //id = nextId;
+
+      id = NUMBER_PLATE_PREFIX + (++nextId);
+   }
 
 
 ******************************************************
@@ -115,22 +192,33 @@ Employee
 
 Suppose we have this setup:
 
-	GUI Class (the user interface)
+	UI Class (the user interface)
 	  - Employee Class
 	  - Manager Class
 
 The idea of OOP is that every class is self contained - all of the data and the methods that work on that data are contained in a single unit, called a class.
 
 Where should Employee data be stored ?
+	Employee
 Where should Manager data be stored ?
+	Manager+Employee
 
-Where should Employee data be checked / validate ?
+Where should Employee data be checked / validated ?
+	Employee
+
 Where should the error message text be created if Employee data is invalid ?
+	Employee
+
 Where should error messages be displayed if Employee data is invalid ?
+	UI Class (the user interface)
 
 Where should Manager data be checked / validate ?
+	Manager+Employee
 Where should the error message text be created if Manager data is invalid ?
+	Manager+Employee
 Where should error messages be displayed if Manager data is invalid ?
+	UI Class (the user interface)
+
 
 
 ******************************************************
@@ -172,6 +260,10 @@ if (input #3 is blank or invalid)
 Do whatever processing is required ...
 - Create object
 - Add to Array / ArrayList or whatever
+- increment counters
+- reset inputs
+- display a "Save successful" dialog
+- save data to file ...
 
 
 ******************************************************
@@ -192,6 +284,85 @@ Also see Mike's Demo Java code: "Week 05/MultipleCenterPanelsControlledByButtons
       cardLayout.show(cardLayoutPanel, "loadingDataPanel");
 
 
+
+Q. Real plate number of just a couter.
+* Yes is OK.
+* If you want a letters prefix "ABC", etc - you can.  OVERKILL
+* If you want to allocate random 3 letters + 3 digit numbers and loop until you get unique, you can.  OVERKILL
+
+Q. Can students use Exception Handling in Assignment 1 ?
+try, catch, finally, throw, ...
+==> My preliminary answer: maybe ...
+==> I will check with Farzad (CC) on the forums.
+
+Q. Can students use the NetBeans GUI builder ?  (Instead of writing the code to build the GUI by hand).
+A.
+1. We haven't covered NetBeans GUI builder in class.
+2. Every GUI we have built so far in this course and prior course has been from 1st principles / by hand.
+3. NetBeans generates HORRIBLE code.
+4. My YouTube has dozens of videos building GUI's by hand and explaining all of the code as I go.  So If any students need help, demos, etc there's plenty of resources there.
+==> My preliminary answer: NO, do NOT use NetBeans GUI builder.
+==> I will check with Farzad (CC) on the forums.
+
+* Validating dates.
+Q. Can we use simple date format? I find it easy for validation.
+
+// We will discuss this in Week 6:
+
+import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.text.ParseException;
+
+
+      Date today = new Date ();
+
+      SimpleDateFormat YYYY_MM_DD_FORMATTER = new SimpleDateFormat ("yyyy-mm-dd");
+
+      Date parsedDate = null;
+
+      try
+      {
+         parsedDate = YYYY_MM_DD_FORMATTER.parse("2017-08-17");
+         parsedDate = YYYY_MM_DD_FORMATTER.parse("fred");
+
+         int num = Integer.parseInt("123");
+         double dbl = Double.parseDouble ("123.456");
+
+      }
+      catch (ParseException err)
+      {
+        // Generate error message ...
+      }
+
+
+
+Q. I feel like they should show a lot of the GUI stuff we're doing here and some exception handling in the other course
+Yes, agree.
+
+Q. We just got given the template for GUI in assignment 2 last term for my class
+Yes, true.
+
+Q. Last term, we had to build it all from scratch for final assignment. Cause it was changed.
+Assignment 3 instead Exam - students had to build this from scratch.
+Pass : console app
+Credit or better: GUI
+
+Workshop coming up:
+* We can do GUI programming: Labels, buttons panels, etc from scratch.
+--> To be Confirmed by Farzad (CC) - keep an eye on email / course forums.
+* Tons of examples here for developing GUIs:
+http://tinyurl.com/MikesJavaVideos
+
+Sample NetBeans code:
+	method(param1, param2).nextMethod (:::::).nextMethod2 (......)
+		.nextMethod3 (......)
+		.nextMethod4 (......)
+		.nextMethod5 (......);
+
+
+Q. I've tried to run a GUI in NetBeans before and I couldn't actually get it to showup
+A. Netbeans, huge, complex tool
++. code it generates is AWFUL.
 
 
 EOF.

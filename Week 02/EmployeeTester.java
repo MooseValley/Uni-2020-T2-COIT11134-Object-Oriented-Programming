@@ -15,6 +15,14 @@ public class EmployeeTester
       Employee emp1 = new Employee ("Teenie Weenie", 3500, 2020, 07, 01);
       System.out.println (emp1);
 
+      ArrayList<Employee> employeesArrayList = new ArrayList<Employee> ();
+
+      employeesArrayList.add (emp1);
+      employeesArrayList.add (new Employee ("Frankie", .......) );
+      employeesArrayList.add (boss1);
+      employeesArrayList.add (new Manager (....) );
+
+
    }
 
 } // public class EmployeeTester

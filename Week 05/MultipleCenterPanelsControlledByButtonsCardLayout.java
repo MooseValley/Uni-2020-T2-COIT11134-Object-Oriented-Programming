@@ -72,9 +72,19 @@ public class MultipleCenterPanelsControlledByButtonsCardLayout extends JFrame
       //add (mainCenterPanel, BorderLayout.CENTER);
       add (buttonPanel,     BorderLayout.SOUTH);
 
+      /*
       showPanel1Button.addActionListener (event -> showPanel1 () );
       showPanel2Button.addActionListener (event -> showPanel2 () );
       showPanel3Button.addActionListener (event -> showPanel3 () );
+      */
+
+      showPanel1Button.addActionListener (event -> showPanel ("panel1") );
+      showPanel2Button.addActionListener (event -> showPanel ("panel2") );
+      showPanel3Button.addActionListener (event -> showPanel ("panel3") );
+
+      showPanel ("panel3");
+      revalidate();
+      repaint();
    }
 
    private void createPanel1 ()
@@ -101,6 +111,7 @@ public class MultipleCenterPanelsControlledByButtonsCardLayout extends JFrame
       panel3.add (myButton3);
    }
 
+   /*
    private void showPanel1 ()
    {
       //mainCenterPanel.removeAll ();
@@ -127,12 +138,18 @@ public class MultipleCenterPanelsControlledByButtonsCardLayout extends JFrame
       //mainCenterPanel.repaint();
       cardLayout.show(cardLayoutPanel, "panel3");
    }
+   */
+
+   private void showPanel (String panelStr)
+   {
+      cardLayout.show(cardLayoutPanel, panelStr);
+   }
 
    public static void main (String[] args)
    {
       MultipleCenterPanelsControlledByButtons app = new MultipleCenterPanelsControlledByButtons();
 
-      app.setTitle ("Multiple Center Panels v0.001");
+      app.setTitle ("Multiple Center Panels v0.002");
       app.setSize     (600, 200);
       app.setLocation (200, 200);
       app.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);

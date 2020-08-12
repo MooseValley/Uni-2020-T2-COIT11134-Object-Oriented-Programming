@@ -15,11 +15,13 @@ public class Employee
    private double salary;
    private LocalDate hireDay;
 
+   // Default Constructor
    public Employee()
    {
       this ("", 0, 2000, 01, 01);
    }
 
+   // Parameterised Constructor
    public Employee(String name, double salary, int year, int month, int day)
    {
       this.name = name;
@@ -27,9 +29,26 @@ public class Employee
       hireDay = LocalDate.of(year, month, day);
    }
 
+   public Employee (Employee emp)
+   {
+      name    = emp.getName();   // Safe because String is IMMUTABLE
+      salary  = emp.getSalary();
+
+      // SAFE:
+      hireDay = emp.getHireDay(); // Safe because it returns a COPY of the data
+
+      // ERROR: WARNING !!!!  A reference to the data !!!
+      //hireDay = emp.hireDay;
+   }
+
    public String getName()
    {
       return name;
+   }
+
+   public void setHireDay (int year, int month, int day)
+   {
+      hireDay = LocalDate.of(year, month, day);
    }
 
    public double getSalary()
@@ -39,7 +58,9 @@ public class Employee
 
    public LocalDate getHireDay()
    {
-      return hireDay;
+      return hireDay; // OK for LocalDate.  Confirmed.
+      // Normally: WARNING !!!!  A reference to the data !!!
+      //return (LocalDate) hireDay.clone();  // Safe because it returns a COPY of the data
    }
 
    public void raiseSalary (double byPercent)
