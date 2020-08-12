@@ -1,3 +1,9 @@
+/*
+Author: Mike OMalley
+Source: Person.java
+Desc:   Person class - abstract class.
+
+*/
 public abstract class Person
 {
    public abstract String getDescription();

@@ -1,4 +1,7 @@
 /*
+Author: Mike OMalley
+Source: Manager.java
+Desc:   Inheritance - subclass of Employee.
 
 Mike O fixed / added:
 * Default Constructor.

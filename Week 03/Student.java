@@ -1,3 +1,9 @@
+/*
+Author: Mike OMalley
+Source: Student.java
+Desc:   Student class - a concrete class based on the Person abstract class.
+
+*/
 public class Student extends Person
 {
    private String major;

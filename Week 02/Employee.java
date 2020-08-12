@@ -1,11 +1,14 @@
 /*
+Author: Mike OMalley
+Source: Employee.java
+Desc:   Week 02 demo class.
+
 
 Mike O fixed / added:
 * Default Constructor.
 * @Override for equals() method.
 * default date if no date supplied: 01-01-2000.
 */
-
 import java.time.*;
 import java.util.Objects;
 
