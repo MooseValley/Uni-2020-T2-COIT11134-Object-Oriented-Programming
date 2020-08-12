@@ -1,4 +1,8 @@
-
+/*
+Author: Mike OMalley
+Source: SampleGUI.java
+Desc:   Class Demo: build a simple GUI App from scratch in less than 5 minutes.
+*/
 
 import java.awt.*;
 import java.awt.event.*;

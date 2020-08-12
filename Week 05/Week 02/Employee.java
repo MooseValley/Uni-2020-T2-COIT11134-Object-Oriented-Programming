@@ -1,4 +1,8 @@
 /*
+Author: Mike OMalley
+Source: Employee.java
+Desc:   From Week 02 - with a Copy Constructor added.
+
 
 Mike O fixed / added:
 * Default Constructor.

@@ -1,3 +1,8 @@
+/*
+Author: Mike OMalley
+Source: EmployeeTester.java
+Desc:   Tester class for Employee and Employee subclasses.
+*/
 public class EmployeeTester
 {
    public static void main (String[] args)
