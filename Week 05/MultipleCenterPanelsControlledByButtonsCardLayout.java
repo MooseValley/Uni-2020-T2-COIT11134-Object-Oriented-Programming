@@ -1,6 +1,6 @@
 /*
 Author: Mike OMalley
-Source: MultipleCenterPanelsControlledByButtons.java
+Source: MultipleCenterPanelsControlledByButtonsCardLayout.java
 Desc:   This code builds a very simple GUI with 3 main panels, which are controlled
         by 3 buttons.  Click button 1 and panel 1 is shown, and so on.
 
@@ -13,6 +13,19 @@ Desc:   This code builds a very simple GUI with 3 main panels, which are control
         It is highly recommended that students Story Board their GUI designs (panels, components, etc)
         and name them with nice meaningful names, and then write the code to support their design.
         This will ensure the smoothest path to success.
+
+
+Ammendment History
+Ver   Date        Author    Details
+----- ----------- --------  ----------------------------------------------------
+0.002 15-Aug-2020  Mike O   Fix issue where the panel was not showing up on app startup when
+                            showPanel ("panel1") was called et the end of the Constructor.
+                            Issue was because I was creating wrong class object in main
+                            (I somehow missed changing the class name when I copied and renamed
+                            the other example class):
+                              MultipleCenterPanelsControlledByButtons app = new MultipleCenterPanelsControlledByButtons();
+                            sould be:
+                              MultipleCenterPanelsControlledByButtonsCardLayout app = new MultipleCenterPanelsControlledByButtonsCardLayout();
 
 */
 
@@ -82,9 +95,7 @@ public class MultipleCenterPanelsControlledByButtonsCardLayout extends JFrame
       showPanel2Button.addActionListener (event -> showPanel ("panel2") );
       showPanel3Button.addActionListener (event -> showPanel ("panel3") );
 
-      showPanel ("panel3");
-      revalidate();
-      repaint();
+      showPanel ("panel1");
    }
 
    private void createPanel1 ()
@@ -147,12 +158,12 @@ public class MultipleCenterPanelsControlledByButtonsCardLayout extends JFrame
 
    public static void main (String[] args)
    {
-      MultipleCenterPanelsControlledByButtons app = new MultipleCenterPanelsControlledByButtons();
+      MultipleCenterPanelsControlledByButtonsCardLayout app = new MultipleCenterPanelsControlledByButtonsCardLayout();
 
-      app.setTitle ("Multiple Center Panels v0.002");
+      app.setTitle    ("Multiple Center Panels v0.002");
       app.setSize     (600, 200);
       app.setLocation (200, 200);
       app.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
-      app.setVisible (true);
+      app.setVisible  (true);
    }
 }
