@@ -3,3 +3,5 @@
 
 00 - Merge ALL TXT files into one file - useful for searching.bat
 00 - Merge ALL TXT files into one file - useful for searching.txt
+00*.txt
+00*.bat

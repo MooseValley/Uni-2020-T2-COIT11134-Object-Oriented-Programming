@@ -3,6 +3,8 @@ Author: Mike OMalley
 Source: EmployeeTester.java
 Desc:   Tester class for Employee and Employee subclasses.
 */
+import java.util.ArrayList;
+
 public class EmployeeTester
 {
    public static void main (String[] args)
@@ -23,10 +25,16 @@ public class EmployeeTester
       ArrayList<Employee> employeesArrayList = new ArrayList<Employee> ();
 
       employeesArrayList.add (emp1);
-      employeesArrayList.add (new Employee ("Frankie", .......) );
+      employeesArrayList.add (new Employee ("Hankel", 3500, 2020, 07, 02) );
       employeesArrayList.add (boss1);
-      employeesArrayList.add (new Manager (....) );
+      employeesArrayList.add (new Manager ("Boogle", 2020, 07, 15) );
 
+
+      System.out.println ("\n\nArrayList part:");
+      for (int k = 0; k < employeesArrayList.size(); k++)
+      {
+         System.out.println (employeesArrayList.get(k) );
+      }
 
    }
 

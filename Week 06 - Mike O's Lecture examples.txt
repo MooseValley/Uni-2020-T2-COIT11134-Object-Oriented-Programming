@@ -32,8 +32,22 @@ Week 12 - Final Revision
 
 LAST WEEK:  Week 5
 * Week 05 - GUI and Event Handling.  Next week: mid-term break
+* Week 05 - lecture class devoted to topics related to Assignment 1
+
+Mid-Term Break:
+* - 2 x 2+ hour Java Boot camp sessions during mid-term break (on Wed, 19-Aug-2020)
+* Hopefully you put your mid-term break to very good use and you are right up-to-date with everything and your Assignment 1 is virtually finished.  :)
+
 
 THIS WEEK:  Week 6
 * Week 06 - Exception Handling, and File IO
+
+
+Suggestions:
+
+* Keep a Java summary text file with snippets of useful code.  (Do this for all of your courses).
+
+* Use a Adobe Acrobat on any CQUni PC (or any other machine with the licensed version) to merge all of the lecture slides, tutorial questions, extra readings, Java code, extra examples, course material, and anything else that may be useful into a single PDF - great for searching !!  A single simple search can find anything you need for that course.
+
 
 EOF.
