@@ -50,4 +50,360 @@ Suggestions:
 * Use a Adobe Acrobat on any CQUni PC (or any other machine with the licensed version) to merge all of the lecture slides, tutorial questions, extra readings, Java code, extra examples, course material, and anything else that may be useful into a single PDF - great for searching !!  A single simple search can find anything you need for that course.
 
 
+
+Exception Handling
+
+try
+catch
+finally
+throw
+
+Q. You can also just put "Exception" in the catch to catch all exceptions right?
+
+
+      try
+      {
+         //parsedDate = YYYY_MM_DD_FORMATTER.parse("2017-08-17");
+         parsedDate = YYYY_MM_DD_FORMATTER.parse("fred");
+
+         int num = Integer.parseInt("123fff");
+         double dbl = Double.parseDouble ("123.456");
+
+      }
+      catch (ParseException err)
+      {
+        // Generate error message ...
+         System.out.println ("ERROR: Date is Not Valid." );
+      }
+      catch (NumberFormatException err)
+      {
+        // Generate error message ...
+         System.out.println ("ERROR: Number is NOT valid." );
+      }
+
+
+
+      try
+      {
+         //parsedDate = YYYY_MM_DD_FORMATTER.parse("2017-08-17");
+         parsedDate = YYYY_MM_DD_FORMATTER.parse("fred");
+
+         int num = Integer.parseInt("123");
+         double dbl = Double.parseDouble ("123.456");
+
+      }
+      catch (Exception err)
+      {
+         // Generate error message ...
+         System.out.println ("ERROR: Something went wrong ????" );
+      }
+
+
+
+
+      try
+      {
+         //parsedDate = YYYY_MM_DD_FORMATTER.parse("2017-08-17");
+         parsedDate = YYYY_MM_DD_FORMATTER.parse("fred");
+      }
+      catch (Exception err)
+      {
+         // Generate error message ...
+         System.out.println ("ERROR: Date Invalid." );
+      }
+
+      try
+      {
+         int num = Integer.parseInt("123");
+      }
+      catch (Exception err)
+      {
+         // Generate error message ...
+         System.out.println ("ERROR: Age is not valid." );
+      }
+
+
+      try
+      {
+         int age = Integer.parseInt("123");
+         if ((age < 0) || (age > 120) )
+         	throw new NumberFormatException ();
+      }
+      catch (NumberFormatException err)
+      {
+         // Generate error message ...
+         System.out.println ("ERROR: Age must be an integer between 0 and 120 incl." );
+      }
+		finally
+		{
+         // Save age to database.
+		}
+
+Q. so you'd use finally to log the error or something?
+
+
+      try
+      {
+         // Open File
+         // Read File
+         // Process File
+         // Close File
+      }
+      catch (FileIOException err)
+      {
+         // Generate error message ...
+         System.out.println ("ERROR: File error ...." );
+      }
+      catch (NumberFormatException err)
+      {
+         // Generate error message ...
+         System.out.println ("ERROR: Data error ...." );
+      }
+      catch (::::: err)
+      {
+         // Generate error message ...
+         System.out.println ("ERROR: File error ...." );
+      }
+		finally
+		{
+         // close file.
+		}
+
+ERROR Messages:
+Where should you display them ?
+
+The worst thing you can do in your code is FAIL in silence,
+Or produce error messages that people cannot normally see.
+Failing in silence might be OK if the error is trivial or could be fully handled.
+
+For serious errors:
+Ensure your displaying errors in a way the user can see (if the user needs to know).
+If serious system errors:
+* Write to error log
+* AND email the sysadmin
+* AND display error to the user
+* AND ......
+
+
+Unchecked Exceptions
+* Exceptions you can handle or not ... if you don't handle them your program crashes.
+* Examples: NumberFormatException, ArithmeticException, ..
+* Up to the programmer to handle these ... if they want to ...
+
+Checked Exceptions
+* When you use Java commands that so dangerous that Java will NOT let you use them unless you handle the Exceptions
+* i.e. You cann write the code unless you handle the Exceptions.
+* File I/O, Network I/O, Database I/O
+
+
+NOT Allowed - no try, catch, .....
+// Open File
+// Read File
+// Process File
+// Close File
+
+// This is OK: code will now compile (if we handle all the Exceptions)
+      try
+      {
+         // Open File
+         // Read File
+         // Process File
+         // Close File
+      }
+      catch (:::)
+      {
+         // Generate error message, etc
+      }
+
+// This is OK: code will now compile (if we handle all the Exceptions)
+private void processFile()  throws Exception.......
+{
+	// Open File
+	// Read File
+	// Process File
+	// Close File
+}
+
+// ERROR: not OK
+processFile();
+
+// This is OK: code will now compile (if we handle all the Exceptions)
+try
+{
+   processFile();
+}
+catch (:::::)
+{
+}
+
+
+try with Resources
+-> Java knows how to clean up and close objects.
+
+finally
+-> the programmer has to know how to clean up and close objects.
+-> not always easy / obvious ... the Java help is sometimes not all that helpful ...
+
+
+Creating your own Exception Classes
+
+10:11
+
+
+
+*************************************
+*** File I/O
+*************************************
+
+100	Mike	123 Smith St
+120	Frankie	489 Barkie Rd
+
+100
+Mike
+123 Smith St
+
+Scanner kbInput = new Scanner (System.in); // keyboard
+
+Scanner fileIn = new Scanner (new BufferedReader ::: FileReader ("my.dat") ); // File
+
+
+Input File
+* Open file for INPUT
+* read file, probably in a loop
+* Close File
+
+Output File
+* Open file for OUTPUT
+* write file, probably in a loop
+* Close File
+
+
+Many, many ways to read and write a file
+=> Fine the way you like and stick to that.
+
+
+*** Slide 26:
+
+String outStr = owner.getName() + "\t" + "owner.getId() + ......
+
+::::
+	output.write (outStr.getBytes() );
+
+
+OR use the toString():
+
+::::
+	output.write (owner.toString().getBytes() );
+
+if an ArrayList of Employees:
+
+try
+{
+ 	:::
+ 	for (int k = 0; k < employeesArrayList.size(); k++)
+ 	{
+ 		output.write (employeesArrayList.get(k).toString().getBytes() );
+ 	}
+ 	::
+}
+
+*** Slide 28:
+After close():
+	input = null;
+
+Ass 2
+* 1 file for owner data
+* 1 file for vehicle data
+
+
+Sequential Files:
+AAA
+BBB
+ZZZ
+DDD
+
+
+Random Access Files
+
+If you know id ranges from 0 to 999 and you know the length for all employee records (100 char long, must all be the same length)
+You can allocate space in a file for 1000 employees (or whatever)
+and have a large / sparse file where most Employees may be null / blank
+
+Employee emp1 = new Employee (003, "Mike", ....);
+Employee emp2 = new Employee (007, "Frankie", ...);
+
+If you wrote these out to a Random Access File:
+
+------------------------------------------------------------------------------
+
+
+
+003	Mike :::::
+
+
+
+007	Frankie	:::
+
+
+
+-------------------------------------------------------------------------------
+
+
+Random Access Files were often used when computers had a small amount of memory
+and lots to data to process randomly.
+* pretty limited use today
+* can "waste" lots of disk space if you have a large ID space and not much data.
+15 digits for id and only 3000 customers => massively sparse file
+
+Today
+Unless we had 100's of GB of data ... we would read all the data into memory (ArrayLists, etc)
+and process the data in memory.
+
+
+Trick
+* Find a way to READ and WRITE a file that you like
+* Stick to it.
+
+
+	private ArrayList<XXX> ::::
+
+	public ArrayList<XXX> getArrayListXXX ()
+	{
+	    return ::::; // Create a copy / clone ..
+	}
+
+
+// VERY GOOD Design ... but not specified for Ass 1:
+public class OwnerArrayList
+{
+	// Owner array list
+	// and methods to work on it
+}
+
+public class VehicleArrayList
+{
+	// Vehicle array list
+	// and methods to work on it
+}
+
+
+Later on in the term ... Generic Methods / Generic Classes, and we will learn to combine the above 2 classes:
+
+public class ArrayList??????
+{
+	// ?????? array list
+	// and methods to work on it
+}
+
+
+Q. Many of the examples we've been given tend to place the arrays in the GUI class. But since they deal with the data, shouldn't they be placed in their own class which handles that?
+
+A. YES ideally.  But putting the arraylist and the methods to handle it in the GUI class are OK for Ass 1.
+
+Q. My friends were telling me something about MVP and MVC which I didn't really understand when I asked them about that question
+
+A. MVC -> will discuss next week
+
+
+
 EOF.

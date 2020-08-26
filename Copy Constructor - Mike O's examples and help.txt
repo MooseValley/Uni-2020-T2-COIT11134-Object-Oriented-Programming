@@ -1,0 +1,51 @@
+
+
+// Copy Constructor
+
+public class Employee
+{
+   private int id;
+   private String name;
+   private ArrayList<String> addresses;
+
+   public Employee (Employee emp)
+   {
+	   // Dangerous: must return a copy of the data - NOT a reference to it.
+      //id   = emp.id;
+      //id   = emp.name;
+      //addresses = emp.addresses; // WARNING !!!!!
+
+	   // Safe: as long as the Accessor methods are returning copies
+	   // not references to the original data.
+      id   = emp.getId();
+      name = emp.getName();
+      addresses = emp.getAddresses();
+   }
+}
+
+
+Employee emp  = new Employee ();
+Employee emp1 = new Employee (3, "Mike");
+Employee emp2 = new Employee (emp);
+
+
+Assignment 1
+* Copy Constructor - not needed ... but asked for ... not sure why ??
+* Typo ???  Maybe spec meant to say Parameterised Constructor ?
+* Maybe Copy Constructor needed in Ass 2 ??
+
+
+*** Copy Constructor Uses ???
+
+What if ???  Analysis
+* copy of employees, change their rates, etc
+* see the results ?
+* The original employee data is unchanged.
+* copy of employees again, change their rates again, etc
+* see the results again ?
+* The original employee data is unchanged.
+
+Computer Games
+* Create a monster
+* Use Copy Constructor to create copies of that monster and spawn all around the level.
+
