@@ -34,6 +34,281 @@ LAST WEEK:  Week 6
 * Week 06 - Exception Handling, and File IO
 
 THIS WEEK:  Week 7
-* Week 07 - Interfaces and Inner Classes
+* Review / Re-cap: Anonymous Objects, Composition, Inheritance, Abstract Classes, Self-Referential,
+* Week 07 - Interface Classes, Inner Classes, Local Inner Class, Anonymous Classes
+
+
+
+*** Java: One Public Class per File
+
+class Extra
+class Extra2
+class Extra3
+public class MyClass ....  // MyClass.java
+{
+    class Extra4   .... // Inner Classes
+    class Extra5
+}
+
+
+
+*** Anonymous Objects
+	Anymous means "no name".
+
+
+System.out.prinltn ("Hello World");
+
+System.out.prinltn (new String ("Hello World") );
+
+add (myButton);
+add (new JLabel ("    ") );
+add (myNextButton);
+
+
+OR
+JLabel dummyLabel01 = new JLabel ("    ");
+JLabel dummyLabel02 = new JLabel ("    ");
+JLabel dummyLabel03 = new JLabel ("    ");
+JLabel dummyLabel04 = new JLabel ("    ");
+
+add (myButton);
+add (dummyLabel01);
+add (myNextButton);
+
+
+*** Composition
+
+A class contains objects of other classes
+
+public class Address
+public class WorkHistory
+public class Employee
+	Date date;
+	Address address;
+	WorkHistory workHistory;
+
+
+
+*** Inheritance
+
+Classes are built ontop of existing classes
+Saves reinventing the wheel.
+Highly re-usable
+Super
+Subclasses
+Array, ArrayList LinkedList, Queue, Stacks ....
+Week 2: Vehicle, Car, Truck ... critical question
+
+public class Person
+	name, address, dob,
+
+public class Student extends Person
+	gpa, areaofStudy, ...
+
+public class PostGradStudent extends Student
+	areaOfResearch, ....
+
+public class Teacher extends Person
+	areasOfSpeciality, startDate
+
+public class SomeOne extends Student, Teacher .... // ERROR - one one parent
+	areaOfResearch, ....
+
+
+Component
+	Label
+	TextField
+
+
+*** Abstract Classes
+
+Methods others classes must provide.  Template.
+
+public abstract class Class1
+
+public class Class2 implements Class1
+
+Class1 c1 = new Class1();  // Abstract class, cannot create objects of it
+Class2 c2 = new Class2();  // Concrete
+
+
+*** Self-Referential
+
+Class contains objects of itself.
+
+public class Employee
+	Employee[] supervisor;
+	Employee[] mentoree;
+
+
+
+
+*** Interfaces
+
+public class RockyWoodfiredPizzasGUI extends JFrame implements ActionListener
+{
+  ::::
+     addButton.addActionListener (new .....);
+
+  @Override
+  public void actionPerformed (ActionEvent e)
+  {
+  	   //if (e.getSource() == addButton)
+  	   //else if (e.getSource() == calcButton)
+
+  }
+}
+
+// Week 2 ? 3 ?
+public Employee implements Comparable
+{
+  ::::
+  @Override
+  public int compareTo (Object obj)
+  {
+  }
+}
+
+
+*** Slide 4
+
+if (otherObject == null)
+	return ... OR throw ... or ...
+
+// Check an object type to make sure it is safe to TypeCast
+if (otherObject instanceof Employee)
+
+
+
+// To check if you can compare objects of type Employee
+if (myEmp instanceof Comparable)
+	if (myEmp.compareTo(myBoss) == 0)
+	::::
+
+
+public interface MyInterface
+{
+	public static final int MAX_ITEMS = 100;
+
+   boolean areSame(.....);
+   :::
+
+   static int calcSomething (....)
+   {
+      /// Do whatever
+   }
+}
+
+
+
+Java 8
+LTS until 2030
+Java 9 ....
+Java 14 ....
+
+
+9:53	- 15 minute break
+Activity on Slide 11
+We will discuss when we return at 10:08
+
+
+Q. if the main class implements interface and the subclass did not, will the interface inherited to the subclass?
+
+
+*** Inner Classes
+
+Classes contained inside other classes.
+
+public class :::::
+{
+   private int xyz;
+
+
+	class :::::
+	{
+
+		class ::::
+		{
+
+		}
+	}
+
+
+	public void ::::::: (:::)
+	{
+		int count = 231;
+
+	    class ::::
+	    {
+
+	    }
+	}
+}
+
+if ( ....)
+{
+   if ( ....)
+     ::::
+}
+
+for (::::)
+{
+   while (....)
+   {
+      for (::::)
+      {
+      }
+   }
+}
+
+
+
+*** Slide 13
+
+JButton myButton = new JButton ("Display Time");
+myButton.addActionListener (listener);
+
+Inner Class
+	a class contained inside another class
+
+Local Inner Class
+	a class contained inside a method
+
+
+*** Slide 17:
+
+// Override the Window Closing Event
+
+myButton.addActionListener (new ActionListener ........);
+
+
+
+
+
+MyFileReader reader = null;
+
+try
+{
+   reader = new MyFileReader ("abc.txt");
+	reader.open();
+}
+catch (:::::)
+{
+}
+finally
+{
+	if (reader != null)
+	{
+	    reader.close();
+	}
+}
+
+
+
+*** Next week and Week after:
+Week 08 - Generic methods and classes
+Week 09 - Generic classes
+
+
 
 EOF.
