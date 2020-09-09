@@ -15,6 +15,9 @@ ZOOM / Class Recordings:
 * Mike O's reminder to himself: Reboot PC before class. Stop CLOUD Recording. Record video locally.
 * Students Please Note: Online sessions are recorded for educational purposes.  Recordings may be uploaded to public YouTube, Moodle, Microsoft Teams, and/or other locations.  If you do NOT want to be recorded please turn your webcam and/or microphone OFF during the session. (You can type questions / comments in the chat window).  Your participation will signify your consent to the recording and publication for educational purposes.
 
+Start soon - only 5 people so far ....
+
+
 ROAD MAP:
 Week 01 - Revision of Java, Github review.  Note: Github is mandatory in this course.
 Week 02 - Inheritance
@@ -31,9 +34,174 @@ Week 12 - Final Revision
 
 
 LAST WEEK:  Week 7
-* Week 07 - Interfaces and Inner Classes
+* Review / Re-cap: Anonymous Objects, Composition, Inheritance, Abstract Classes, Self-Referential,
+* Week 07 - Interface Classes, Inner Classes, Local Inner Class, Anonymous Classes
 
 THIS WEEK:  Week 8
 * Week 08 - Generic methods and classes
+* Week 09 - Generic classes ???
+
+
+NEXT WEEK:
+* Assignment 2 topics: explore Generics, File I/O, maybe typed files, discuss an Array / ArrayList class strategy ...
+
+
+*** Method Overloading
+
+panel.add (myLabel);
+add (myButton);
+menu.add (mymenuOption);
+name.add ("Mike");
+
+
+
+If you find yourself doing ANYTHING liek this:
+
+// Sort Integers
+:::: dozens of lines of code ???
+
+// Sort Strings
+:::: dozens of lines of code ???
+/// the same code but with int changed to String
+
+// Sort Employees
+:::: dozens of lines of code ???
+/// the same code but with String changed to Employees
+
+
+STOP !!!
+Use Generic Methods techniques.
+
+
+
+
+
+
+
+
+
+
+Look carefully at the syntax:
+
+	private static <T> void printMarks (T a1, T a2)
+   {
+      ::::
+   }
+
+
+Will this work ?
+
+	private static <T> void printMarks (T a1, String a2)
+   {
+      ::::
+   }
+
+
+YES, All OK !  :)
+
+
+Will this work ?
+
+   private static <T> void printMarks (Double a1, Double a2)
+   {
+      ::::
+   }
+
+
+Error: cannot infer type-variable(s) T
+
+
+Will this work ?
+
+   private static void printMarks (T a1, T a2)
+   {
+      ::::
+   }
+
+
+Error: cannot find symbol T ....
+
+
+
+
+If I say this:
+   private static <T> void printMarks (T a1, T a2)
+
+Java translates this to:
+   private static <Object> void printMarks (Object a1, Object a2)
+
+
+
+If I say this:
+   private static <T,U> void printMarks (T a1, U a2)
+
+Java translates this to:
+   private static <Object> void printMarks (Object a1, Object a2)
+
+
+If I say this:
+   private static <T extends Comparable> void printMarks (T a1, T a2)
+
+Java translates this to:
+   private static Comparable void printMarks (Comparable a1, Comparable a2)
+
+
+If I say this:
+   private static <T extends Comparable,U> void printMarks (T a1, U a2)
+
+Java translates this to:
+   private static <Comparable,Object> void printMarks (Comparable a1, Object a2)
+
+
+*** Slide 12:
+
+   private static <T> void printMarks (T a1, T a2)
+   {
+      T max;
+   }
+
+
+
+public class ... implements Comparable, Serializable
+
+::: <T extends Comparable & Serializable>
+
+
+
+
+***********************************************
+*** Generic Classes
+***********************************************
+
+ArrayList<Employees> ....
+	Save to file
+	Load from file
+	Search for Employee by name
+	Get list of employees into a JTextArea, JTable, etc ....
+
+ArrayList<WorkHistory> ....
+	Save to file
+	Load from file
+	Search for Employee by name
+	Get list of employees into a JTextArea, JTable, etc ....
+
+
+*** Slide 13:
+
+Pair<Date> pairD = new Pair<Date>(new Date(), new Date() );
+
+Date a = pairD.getFirst();
+
+if (pairD instanceof Pair<Date>)  // ERROR
+
+if (a instanceof Date) // OK
+	:::
+
+
+
+*** Singleton
+A class that can be instatantiated once and once only.
+
+
 
 EOF.

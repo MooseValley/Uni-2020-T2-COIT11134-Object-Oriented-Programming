@@ -1,3 +1,9 @@
+/*
+Author: Mike OMalley
+Source: Employee.java
+Desc:   Examples and exploring classes with interfaces.
+*/
+
 public abstract class Employee implements Payable
 {
    private String firstName;

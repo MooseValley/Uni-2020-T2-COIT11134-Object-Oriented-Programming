@@ -1,8 +1,12 @@
+/*
+Author: Mike OMalley
+Source: ExeptionHandling.java
+Desc:   Examples and exploring Exeption Handling...
+*/
+
 import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.text.ParseException;
-
-
 
 public class ExeptionHandling
 {

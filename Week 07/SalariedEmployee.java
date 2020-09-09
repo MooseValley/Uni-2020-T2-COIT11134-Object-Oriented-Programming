@@ -1,3 +1,9 @@
+/*
+Author: Mike OMalley
+Source: SalariedEmployee.java
+Desc:   Examples and exploring classes with interfaces.
+*/
+
 public class SalariedEmployee extends Employee
 {
    private double hourlyRate;
