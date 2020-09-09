@@ -50,11 +50,21 @@ public class OverLoadTest
    }
 */
 
+
+   private static <T> void printMarks (T a1, U a2)
+   {
+      System.out.println("printMarks (T,U)\n\tAssignment1 = " +a1+"\n\tAssignment2 = "+ a2);
+   }
+
+
+
+/*
    // Only numbers: Double, Integer, etc .... NOT Dates, Strings, etc ....
    private static <T extends Number> void printMarks (T a1, T a2)
    {
       System.out.println("printMarks (T)\n\tAssignment1 = " +a1+"\n\tAssignment2 = "+ a2);
    }
+*/
 
    public static void main(String [] args)
    {
