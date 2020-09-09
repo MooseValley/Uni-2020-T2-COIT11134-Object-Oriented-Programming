@@ -15,8 +15,6 @@ ZOOM / Class Recordings:
 * Mike O's reminder to himself: Reboot PC before class. Stop CLOUD Recording. Record video locally.
 * Students Please Note: Online sessions are recorded for educational purposes.  Recordings may be uploaded to public YouTube, Moodle, Microsoft Teams, and/or other locations.  If you do NOT want to be recorded please turn your webcam and/or microphone OFF during the session. (You can type questions / comments in the chat window).  Your participation will signify your consent to the recording and publication for educational purposes.
 
-Start soon - only 5 people so far ....
-
 
 ROAD MAP:
 Week 01 - Revision of Java, Github review.  Note: Github is mandatory in this course.
