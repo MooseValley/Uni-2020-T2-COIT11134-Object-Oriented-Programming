@@ -32,8 +32,260 @@ Week 12 - Final Revision
 
 LAST WEEK:  Week 8
 * Week 08 - Generic methods and classes
+* Week 09 - Generic classes
 
 THIS WEEK:  Week 9
-* Week 09 - Generic classes
+* Assignment 2 spec: read, highlight keywords, partly storyboard.
+* Assignment 2 topics: explore Generics, discuss an Array / ArrayList class strategy, File I/O, maybe typed files, ...
+
+
+
+********************************************
+*** Generics - ArrayList class strategy
+********************************************
+
+UML Class Diagrams:
+
+------------------------
+VehicleArrayList
+------------------------
+-ArrayList<Vehicle> ....
+------------------------
++create
++saveToFile
++loadFromFile
++toString
++search
+::: etc
+
+------------------------
+OwnerArrayList
+------------------------
+-ArrayList<Owner> ....
+------------------------
++create
++saveToFile
++loadFromFile
++toString
++search
+::: etc
+
+
+And so on for Accident ... 3 ArrayList classes and they are virtually 100% identical.
+
+The SAME functionality !  The same requirements !
+
+Ding ding ding .... GENERIC CLASSES / GENERIC METHODS !!!
+
+
+Some problems for you to solve ... *YOU* need to think / explore / work out the solutions !
+
+Let's look at one problem to get you started and thinking ...
+
+How are you going to tell the generic search() method to search by ownerName (or whatever) when it is for Owners, and for vehicle license plate (or whatever) when it is Vehicles, and so on ?
+
+Various ways to do this !
+
+How about instanceof ???
+
+public int search (String searchStr)
+{
+	::::
+	String compareStr = "";
+	if (object instanceof Owner)
+		compareStr = ((Owner) object).getOwnerName(); // or whaveter
+   else if (object instanceof Vehicle)
+   	:::
+}
+
+A bit ugly ...  for each data class you would need to add an else if ....  Boooo !!!  Ugly !  Hisss !!!!!
+
+
+Or, add a method to each Instance Class (Vehicle, Owner, etc)
+getSearchTerm().  You could make this a mandatory method for data classes IF you are going to great an Generic ArrayList class object of them.  How do you make it mandatory ??
+
+HINT: What about Interface class ???  Or Abstract class ???
+
+
+All of these things fit together - like a jigsaw.
+
+There is a reason why we cover these topics.
+
+If you are using Generic Classes and Generic Methods, Abstract Classes, Interface Classes, etc are often very useful !
+
+
+
+********************************************
+*** File I/O
+********************************************
+
+// Pseudo-code - read a data file into ArrayList of objects ...
+open file
+loop until EOF
+	read a line of data
+	split it up into an array of String fields.
+	e.g. String[] arr = str.split ("\t");
+	create an object (Vehicle, Owner, whatever) - call Constructor ...
+	add object to arraylist
+close file
+
+Why not add a Constructor to your class that takes a String of tab separated data and create an object based on that String ?
+
+
+// Pseudo-code - read a data file into ArrayList of objects ...
+open file
+loop until EOF
+	read a line of data
+	create an object - call Constructor with tab separated data
+	add object to arraylist
+close file
+
+In this way, your Instance class is taking care of the processing.
+
+
+Now let's look at writing:
+
+// Pseudo-code - write data file from ArrayList of objects ...
+open file
+loop until EOF
+	get object from arraylist
+	get name, make, model, etc ....
+	create output tab separated
+	append it to file
+close file
+
+But this code is a lot like the code that displays all of the objects in an TextArea:
+
+loop until EOF
+	get object from arraylist
+	get name, make, model, etc ....
+	create output tab separated
+	append it TextArea
+
+Can you create a method in your class that returns the data tab separated ?  toString() ?  Or create another method toStringTabSeparated () ...
+
+You can then shorten your code down and save duplication:
+
+loop until EOF
+	get object from arraylist
+	append tab separated data to file ... TextArea ... whatever
+
+Cool ???
+
+
+********************************************
+*** File I/O - Typed Files
+********************************************
+
+Typed Files allow you to just write / read objects to file.
+No need to convert data to String and tab separate it or whatever.
+
+// Write:
+Vehicle vehicle1 = new Vehicle (::::);
+Vehicle vehicle2 = new Vehicle (::::);
+FileOutputStream   fos = null;
+ObjectOutputStream oos = null;
+
+try
+{
+	fos = new FileOutputStream   ("myfile.dat");
+	oos = new ObjectOutputStream (fos);
+
+	oos.writeObject (vehicle1);
+	oos.writeObject (vehicle2);
+}
+catch (....)
+{
+	:::
+}
+finally
+{
+	// Students: close what else ?  try ?  catch ? Check for nulls ?
+	oos.close();
+	:::
+}
+
+
+// Read:
+Vehicle vehicle1;
+Vehicle vehicle2;
+FileInputStream   fis = null;
+ObjectInputStream ois = null;
+
+try
+{
+	fis = new FileInputStream   ("myfile.dat");
+	ois = new ObjectInputStream (fis);
+
+	Object obj = ois.readObject();
+	if (obj instanceof Vehicle)
+	{
+		vehicle1 = (Vehicle) obj;
+	}
+
+	Object obj = ois.readObject();
+	if (obj instanceof Vehicle)
+	{
+		vehicle2 = (Vehicle) obj;
+	}
+}
+catch(Exception ex)
+{
+	:::
+}
+finally
+{
+	// Students: close what else ?  try ?  catch ? Check for nulls ?
+	oos.close();
+	:::
+}
+
+
+
+But this works for data structures - like ArrayLists - of objects as well !!!
+(try, catch, etc removed - just showing the bare bones code)
+
+
+	ArrayList<Vehicle> vehicleArrayList   = new ArrayList<Vehicle> ();
+	::::
+
+	FileOutputStream   fos = new FileOutputStream   ("myfile.dat");
+	ObjectOutputStream oos = new ObjectOutputStream (fos);
+
+	oos.writeObject (vehicleArrayList);
+	oos.close();
+	:::
+
+
+You can read / write an entire ArrayList of objects (and other data structures) with a single read / write statement !
+
+Amazing ??
+
+
+Draw backs (and they are all pretty minor) are:
+
+* you cannot drag your file into TextPad and understand all of the data .. it will contain strange binary characters, etc.
+
+* if the file is damaged / corrupted, it can be harder to recover data because of the binary chars.
+You might need to write code to extract and recover what data you can ...
+
+* We should really talk about some other "advanced topics" such as serializable, ...  if we are going to talk about typed files.
+
+* If you're feeling confident and looking for an extra challenge that will reduce your code down ...
+
+
+
+
+
+Any questions about anything course or assignment related ?
+
+Anything else you want to explore ?
+
+Anything you aren't sure of ?
+(You are probably going to need to explore / think about what I have said above).
+
+
+
+
 
 EOF.
