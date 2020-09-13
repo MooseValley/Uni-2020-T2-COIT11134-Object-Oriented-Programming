@@ -35,14 +35,103 @@ LAST WEEK:  Week 8
 * Week 09 - Generic classes
 
 THIS WEEK:  Week 9
+* Assignment 2
 * Assignment 2 spec: read, highlight keywords, partly storyboard.
+* MVC - Model View Controller (Wayne's question from 2 weeks ago ?)
 * Assignment 2 topics: explore Generics, discuss an Array / ArrayList class strategy, File I/O, maybe typed files, ...
+
+
+
+*** Notes:
+* none of what I show you below is MANDATORY for Assignment 2 (as far as I can tell) ...
+* but it is topics mostly stuff that we have already covered (revision and re-cap), and includes topics that you should be thinking about and strongly considering using in your Assignment 2 work.
+* If you apply what I show you below, you will probably end up with a lot less code and a lot less duplication and also a neater, tidier result that is easier to test, debug, understand, and modify.
+
+
+
+
+********************************************
+*** MVC - Model View Controller (Wayne's question from 2 weeks ago ?)
+********************************************
+
+We don't officially cover this ...
+
+GUI Class (everything iculuding the kitchen sink)
+	Arraylist
+	GUI components
+	:::
+	create gui and activate buttons
+	handle button clicks
+	load / save / search arraylist
+	:::
+Instance class
+	data ...
+	Constructors, Accessors, Mutators, toString, compareTo, etc
+
+Apart from the Instance class ... it is very hard to reuse this design.
+
+A better design:
+
+GUI Class
+	create gui and activate buttons
+	handle button clicks
+ArrayList class
+	Arraylist
+	load / save / search arraylist
+Instance class
+	data ...
+	Constructors, Accessors, Mutators, toString, compareTo, etc
+
+In this design there is a CLEAR DELINEATION of duties:
+
+* The GUI class handles user interaction and display of results / errors.
+
+* The ArrayList class handles the storage, file I/O, searching, processing of an ArrayList of Instance class objects ...
+
+* The Instance class handles a single object - create, validate, get, set,  toString, compareTo, etc
+
+Advantages:
+* Highly re-usable.
+* Easier to unit and system test.
+* Easier to extend / modify.
+* Easier to code / understand.
+* Less dependencies, less coupling, lower cohesion ...
+* More generic ...
+
+If the ArrayList class is generic, it can be used anytime we need an ArrayList.
+
+If we changed from a GUI app to a Console app, all we should need to change (or replace) is the GUI class - everything else should stay as is.
+
+If we changed from a GUI app to a Web App app, all we should need to change (or replace) is the GUI class - everything else should stay as is.
+
+If we change from storing data in a database instead of files, all we should need to change is the ArrayList class - everything else should stay as is.
+
+If we change the data (add an instance field) all we should need to change is the Instance class and the GUI class (to display / get the new data) - the ArrayList class (if it is coded right i.e. generically) should not need to change.
+
+
+This is basically what MVC is all about.
+
+* Model: your data classes (your instance classes).
+e.g. the instance class in the above example.
+
+* View:  your user interface - getting input, displaying results / errors.  Should not do any real processing.  Just GUI components and buttons hooked up to call methods in the Controller(s) ...
+e.g. the GUI class in the above example.
+
+* Controller: the "brains", where the the real processing is done.
+e.g. the ArrayList class in the above example.
+
+You can have many Models, many Views, and many Controllers in a single project.
+
+We don't officially cover this ... but it is a great way to design / think about developing software (applications, games, OS's, whatever).
+
 
 
 
 ********************************************
 *** Generics - ArrayList class strategy
 ********************************************
+
+Assignment 2
 
 UML Class Diagrams:
 
@@ -80,7 +169,9 @@ Ding ding ding .... GENERIC CLASSES / GENERIC METHODS !!!
 
 Some problems for you to solve ... *YOU* need to think / explore / work out the solutions !
 
-Let's look at one problem to get you started and thinking ...
+Let's look at one problem to get you started and thinking along the right track ...
+
+* SEARCH
 
 How are you going to tell the generic search() method to search by ownerName (or whatever) when it is for Owners, and for vehicle license plate (or whatever) when it is Vehicles, and so on ?
 
@@ -96,6 +187,7 @@ public int search (String searchStr)
 		compareStr = ((Owner) object).getOwnerName(); // or whaveter
    else if (object instanceof Vehicle)
    	:::
+	:::
 }
 
 A bit ugly ...  for each data class you would need to add an else if ....  Boooo !!!  Ugly !  Hisss !!!!!
@@ -105,13 +197,13 @@ Or, add a method to each Instance Class (Vehicle, Owner, etc)
 getSearchTerm().  You could make this a mandatory method for data classes IF you are going to great an Generic ArrayList class object of them.  How do you make it mandatory ??
 
 HINT: What about Interface class ???  Or Abstract class ???
-
+(That is part of what these classes are for !!!)
 
 All of these things fit together - like a jigsaw.
 
 There is a reason why we cover these topics.
 
-If you are using Generic Classes and Generic Methods, Abstract Classes, Interface Classes, etc are often very useful !
+If you are using Generic Classes and Generic Methods, then Abstract Classes, Interface Classes, etc are often very useful !
 
 
 
@@ -176,6 +268,8 @@ Cool ???
 ********************************************
 *** File I/O - Typed Files
 ********************************************
+
+We don't officially cover this ...
 
 Typed Files allow you to just write / read objects to file.
 No need to convert data to String and tab separate it or whatever.
@@ -272,6 +366,13 @@ You might need to write code to extract and recover what data you can ...
 * We should really talk about some other "advanced topics" such as serializable, ...  if we are going to talk about typed files.
 
 * If you're feeling confident and looking for an extra challenge that will reduce your code down ...
+
+
+
+
+
+
+
 
 
 
