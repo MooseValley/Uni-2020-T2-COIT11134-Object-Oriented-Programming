@@ -49,6 +49,19 @@ THIS WEEK:  Week 9
 
 
 
+********************************************
+*** Assignment 2 GUI
+********************************************
+
+Recommend you have 1 JFrame class
+and show / hide panels and/or use CardLayout
+-> see code and examples in Week 5's lecture.
+
+You *could* use multiple JFrames, but this complicates things a lot.
+You need to pass data around, etc.
+AVOID !!
+
+
 
 ********************************************
 *** MVC - Model View Controller (Wayne's question from 2 weeks ago ?)
