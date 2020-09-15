@@ -53,6 +53,8 @@ THIS WEEK:  Week 9
 *** Assignment 2 GUI
 ********************************************
 
+Same advice as Ass 1:
+
 Recommend you have 1 JFrame class
 and show / hide panels and/or use CardLayout
 -> see code and examples in Week 5's lecture.
@@ -284,6 +286,12 @@ Cool ???
 
 We don't officially cover this ...
 
+And the Assignment 2 Spec says "... writing the data to appropriate text files ...".
+
+Typed Files are NOT TEXT files.  They are BINARY files.
+
+But you can use them, if you want.
+
 Typed Files allow you to just write / read objects to file.
 No need to convert data to String and tab separate it or whatever.
 
@@ -360,7 +368,9 @@ But this works for data structures - like ArrayLists - of objects as well !!!
 	ObjectOutputStream oos = new ObjectOutputStream (fos);
 
 	oos.writeObject (vehicleArrayList);
+
 	oos.close();
+	fos.close();
 	:::
 
 
@@ -396,7 +406,7 @@ Any questions about anything course or assignment related ?
 Anything else you want to explore ?
 
 Anything you aren't sure of ?
-(You are probably going to need to explore / think about what I have said above).
+(You are probably going to need to explore / think about what we have covered above).
 
 
 
