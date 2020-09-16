@@ -458,6 +458,20 @@ Anything you aren't sure of ?
 Want to write some code together ?
 
 
+*** Develop GUI with Generic ArrayList class, interface, and instance class,
+along with all students in the class.
+Ref:
+	Week 09/ArrayListGeneric.java
+	Week 09/ArrayListGenericInterface.java
+	Week 09/Zoo.java
+	Week 09/Zooniverse.java
+
+
+Final note to students:
+* If anything I've covered today is too difficult or confusing, use whatever methods you are most comfortable with.
+* Basic file I/O, writing tabbed separated data to file is fine !
+* The Ass 2 spec does NOT say that you MUST use Interface Classes, Abstract Classes, Generic Classes, etc ... they are NOT mandatory, but it would sure be nice if you did.  :)
+* Start with a smallest part of the Assignment 2 problem and solve that, get that working, and then focus on the next small part of the Assignment 2 problem and solve that, get that working, and so on.
 
 
 EOF.
