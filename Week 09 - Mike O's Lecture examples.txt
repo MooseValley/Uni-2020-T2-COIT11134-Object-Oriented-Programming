@@ -44,8 +44,32 @@ THIS WEEK:  Week 9
 
 *** Notes:
 * none of what I show you below is MANDATORY for Assignment 2 (as far as I can tell) ...
-* but it is topics mostly stuff that we have already covered (revision and re-cap), and includes topics that you should be thinking about and strongly considering using in your Assignment 2 work.
-* If you apply what I show you below, you will probably end up with a lot less code and a lot less duplication and also a neater, tidier result that is easier to test, debug, understand, and modify.
+* but it is topics that we have already covered (revision and re-cap), and includes topics that you should be thinking about and strongly considering using in your Assignment 2 work.
+* If you apply what I show you below, you will probably end up with a lot less code and a lot less duplication and also a neater, tidier result that is easier to test, debug, understand, modify, and enhance.
+
+
+
+Asssignment 2 = Assignment 1 + Accidents + File I/O
+
+
+Assignment 1
+	relatively speaking: a lot of work
+
+Assignment 2
+	relatively speaking: a lot less work than Ass 1
+	more thinking
+
+
+
+
+Q.  so..., for the search we use 3 jcombobox which is day, month, and year or can we use one single jcombobox to show recorded date?
+
+A. YES
+Or they could type in a date - a string - and then search for accidents with that date - string.
+04/02/2020
+
+See Week 5 Lecture Notes
+SimpleDateFormat object to validate a date
 
 
 
@@ -71,7 +95,7 @@ AVOID !!
 
 We don't officially cover this ...
 
-GUI Class (everything iculuding the kitchen sink)
+GUI Class (everything inculuding the kitchen sink)
 	Arraylist
 	GUI components
 	:::
@@ -209,7 +233,7 @@ A bit ugly ...  for each data class you would need to add an else if ....  Boooo
 
 
 Or, add a method to each Instance Class (Vehicle, Owner, etc)
-getSearchTerm().  You could make this a mandatory method for data classes IF you are going to great an Generic ArrayList class object of them.  How do you make it mandatory ??
+getSearchTerm().  You could make this a mandatory method for data classes IF you are going to create an Generic ArrayList class object of them.  How do you make it mandatory ??
 
 HINT: What about Interface class ???  Or Abstract class ???
 (That is part of what these classes are for !!!)
@@ -219,6 +243,15 @@ All of these things fit together - like a jigsaw.
 There is a reason why we cover these topics.
 
 If you are using Generic Classes and Generic Methods, then Abstract Classes, Interface Classes, etc are often very useful !
+
+
+Recommendations:
+* Create a basic Generic ArrayList class with Constructor and search only
+* create objects of ArrayListClass<Vehicle> and ...<Owner> and try and do a search
+* and you will see what I mean above - the class needs to know what to search for for each type of data.
+
+
+
 
 
 
@@ -248,13 +281,13 @@ loop until EOF
 close file
 
 In this way, your Instance class is taking care of the processing.
-
+Instance class becomes more powerful, more useful.
 
 Now let's look at writing:
 
 // Pseudo-code - write data file from ArrayList of objects ...
 open file
-loop until EOF
+loop until EOD
 	get object from arraylist
 	get name, make, model, etc ....
 	create output tab separated
@@ -263,7 +296,7 @@ close file
 
 But this code is a lot like the code that displays all of the objects in an TextArea:
 
-loop until EOF
+loop until EOD
 	get object from arraylist
 	get name, make, model, etc ....
 	create output tab separated
@@ -278,6 +311,16 @@ loop until EOF
 	append tab separated data to file ... TextArea ... whatever
 
 Cool ???
+
+
+These are all just suggestions for things you can consider to make your code shorter, simpler
+... if you feel up to the challenge !!
+
+Q. I have a question for File IO, let's say I write my whole arraylist and I want to delete specific data in the arraylist, do we have a shortcut to delete a specific line without copying the whole file to a new file?
+
+A. Add / Delete data to / from arraylist, and then when user exits application, save to file.
+
+
 
 
 ********************************************
@@ -316,7 +359,11 @@ catch (....)
 finally
 {
 	// Students: close what else ?  try ?  catch ? Check for nulls ?
-	oos.close();
+	// They must be closed in the right order -- oos first and then fos.
+	if (oos != null)
+		oos.close();
+	if (fos != null)
+		fos.close();
 	:::
 }
 
@@ -408,6 +455,7 @@ Anything else you want to explore ?
 Anything you aren't sure of ?
 (You are probably going to need to explore / think about what we have covered above).
 
+Want to write some code together ?
 
 
 
