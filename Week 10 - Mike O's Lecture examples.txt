@@ -31,9 +31,42 @@ Week 12 - Final Revision
 
 
 LAST WEEK:  Week 9
-* Week 09 - Generic classes
+* Assignment 2
+* Assignment 2 spec: read, highlight keywords, partly storyboard.
+* MVC - Model View Controller (Wayne's question from 2 weeks ago)
+* Assignment 2 topics: explore Generics, discuss an Array / ArrayList class strategy, File I/O, typed files, ...
+* Develop GUI with Generic ArrayList class, interface, and instance class:
+	Week 09/ArrayListGeneric.java
+	Week 09/ArrayListGenericInterface.java
+	Week 09/Zoo.java
+	Week 09/Zooniverse.java
+
 
 THIS WEEK:  Week 10
 * Week 10 - List and Algorithm
+LinkedLists, Algorithms, Collections, Iterators, Sort, Search, BinarySearch, Big O, ...
+
+
+
+
+Tons  of help, walk throughs, how to's, worked solutions, etc on
+* Mike O'Malley's Java Videos:
+http://tinyurl.com/MikesJavaVideos
+
+Example: for Linked Lists:
+* Java - Reference Data Types and Intro to Linked Lists
+https://www.youtube.com/watch?v=46NNTNtM5uM
+* LinkedList - From Scratch - Part 1 of 2
+https://www.youtube.com/watch?v=BuntNoC8Cq0
+* LinkedList - From Scratch - Part 2 of 2
+https://www.youtube.com/watch?v=WdXKpOIEzoo
+* Exam - COIT11134 Sample Exam - BQ6 - Arrays, LinkedLists, Iterators
+https://www.youtube.com/watch?v=IpQpDVRk7FI
+* Java - LinkedLists - Students GUI - Add, Delete, Display - Part 01
+https://www.youtube.com/watch?v=0KdG9DZgi6I
+* Java - LinkedLists - Students GUI - Add, Delete, Display - Part 02 - Edit
+https://www.youtube.com/watch?v=LXMg1E6gJJ0
+* etc
+
 
 EOF.
