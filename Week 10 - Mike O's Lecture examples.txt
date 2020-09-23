@@ -32,7 +32,7 @@ Week 12 - Final Revision
 
 LAST WEEK:  Week 9
 * Assignment 2
-* Assignment 2 spec: read, highlight keywords, partly storyboard.
+* Assignment 2 spec: read, highlight keywords, ...
 * MVC - Model View Controller (Wayne's question from 2 weeks ago)
 * Assignment 2 topics: explore Generics, discuss an Array / ArrayList class strategy, File I/O, typed files, ...
 * Develop GUI with Generic ArrayList class, interface, and instance class:
@@ -47,6 +47,137 @@ THIS WEEK:  Week 10
 LinkedLists, Algorithms, Collections, Iterators, Sort, Search, BinarySearch, Big O, ...
 
 
+*** Big O
+
+Measure of how efficient an algoritm is.
+
+Linear Search: if you 10x the amount of data -> 10x the time to process it
+	10 items in list -> 5 loops on average to find the item we want
+	100 ""  ""       -> 50 ......
+
+Linear Search:  O(n)
+Binary Search:  O(log n)
+
+
+|     *
+|    *
+|   *        *   ********************
+|  *   *
+| **
+-----------------------------------------
+
+
+Sorting, Compression, Encryption, ...
+
+
+More efficient the algorith
+-> harder to understand / visualise
+-> harder to code
+
+Bubble Sort: O(n^2)
+-> really easy to understand
+-> really easy to code
+Double the amount of data, you quadruple the amount of time
+10's of 10,000;s of items => you might need to wait
+
+Tree Sorts, Merge Sorts
+-> hard to understand / visualise
+-> more complex to code
+Double the amount of data, you might only increase the time by a small amount.
+
+
+
+*** Bubble Sort
+
+    10  5  15  45  56  7  18  22  6
+     5  10 15  45   7  56  18  22  6
+	  5  10 15  7   45  18  56   6  22
+
+Pseudo Code
+
+array arr
+bool swap = true;
+
+while (swap == true)
+{
+	swap = false
+
+	for k = 0; k < arr.length - 1; k++
+	   if (arr[k] > arr[k+1])
+	      temp = arr[k]
+	      arr[k] = arr[k+1]
+	      arr[k+1] = temp
+	      swap = true
+}
+
+Student TODO:
+* Write Java code to do this sort (convert above pseudo code)
+* Maybe get it working for an array of ints
+* Change to String
+* Make it generic ...  compareTo ...
+
+<T extends Comparable>
+
+
+
+*** Collection interface
+
+public class ..... implementents Collection
+
+
+*** Iterator interface
+
+Skeleton of the code (not complete):
+
+List<???> myList ...
+Iterator<???> iter = myList.iterator();
+
+if (iter.hasNext() == true)
+   iter.next();
+
+
+// To traverse the entire "collection":
+List<???> myList ...
+Iterator<???> iter = myList.iterator();
+
+while (iter.hasNext() == true)
+{
+   ??? element = iter.next();
+   S.o.p (element);
+}
+
+
+// Erase all elements in the collection
+
+List<???> myList ...
+Iterator<???> iter = myList.iterator();
+
+while (iter.hasNext() == true)
+{
+   ??? element = iter.next();
+   iter.remove();
+}
+
+
+This will seem pretty scary !!  Confusing !!
+Don't worry !  Some tutorial questions and you will be less scared.
+
+------------------------------------------
+
+Q. Mike, I haven't been able to attend lectures due to work. Is there anywhere I can access what you went through last week?
+
+A. YES, everything is here:
+
+* Mike O'Malley's Java Videos:
+http://tinyurl.com/MikesJavaVideos
+
+
+
+
+
+***********************************************************
+*** Linked Lists
+***********************************************************
 
 
 Tons  of help, walk throughs, how to's, worked solutions, etc on
@@ -67,6 +198,210 @@ https://www.youtube.com/watch?v=0KdG9DZgi6I
 * Java - LinkedLists - Students GUI - Add, Delete, Display - Part 02 - Edit
 https://www.youtube.com/watch?v=LXMg1E6gJJ0
 * etc
+
+
+Employee mike    = new Employee ("Mike", 25);
+Employee frankie = new Employee ("Frankie", 25);
+
+frankie = mike;
+
+frankie.setName ("Fred");
+
+Linked List
+a collection of "pieces of data" in memory where each piece of data "knows about" the next piece of data in the collection.
+
+Node
+* some data
+* reference to the next Node in the list
+
+Linked List is a bunch of Nodes
+
+
+public class Node
+{
+    private String name;
+    //private Employee emp;
+    //::::
+    Node nextNode;     // a Self Referential Class.
+    Node priorNode;     // a Self Referential Class.
+
+    public Node (String name)
+    {
+      this.name = name;
+      nextNode  = null;
+    }
+
+    public void setNextNode (Node node)
+    {
+       nextNode = node;
+    }
+    :::
+
+    public Node getNextNode ()
+    {
+        return nextNode;
+    }
+
+    public String getName()
+    {
+       return name;
+    }
+}
+
+Node n1 = new Node("Mike");
+Node n2 = new Node("Wayne");
+Node n3 = new Node("Amy");
+Node n4 = new Node("Dimas");
+Node n5 = new Node("Andrew");
+
+n1.setNextNode (n2);
+n2.setNextNode (n3);
+n3.setNextNode (n4);
+n4.setNextNode (n5);
+
+
+// Linked List class
+
+Node curr = n1;
+
+while (curr.getNextNode() != null)
+{
+   S.o.p (curr.getName() );
+   curr = curr.getNextNode();
+}
+
+
+Node class
+LinkedList class
+-> Singularly LinkedList
+-> you can only move forwards through the list.  ONE Way !
+
+Doubly LinkedList - you can move forwards and backwards - TWO WAY !
+
+Add:
+	Node priorNode;
+	and set and get methods for PriorNode
+
+n2.setPriorNode (n1);
+n3.setPriorNode (n2);
+n4.setPriorNode (n3);
+n5.setPriorNode (n4);
+
+Node curr = n5;
+
+while (curr.getPriorNode() != null)
+{
+   S.o.p (curr.getName() );
+   curr = curr.getPriorNode();
+}
+
+
+
+Array
+	consecutive memory locations
+
+ArrayList<Employee> arrList = new ArrayList<Employee> ();
+	add
+	get
+	remove
+	set
+
+LinkedList<Employee> arrList = new LinkedList<Employee> ();
+	add
+	get
+	remove
+	set
+	maybe with a little bit of extras: Iterator, ...
+
+
+
+*** HIGHLY Recommend: you build a Node and LinkedList class from first principles (see my videos) and then you will understand them and know what Java's built-in LinkedList class is doing.
+
+LinkedList
+* NOT used in Ass 2
+* Generic ArrayList class
+
+
+*** Big O / Efficiency
+
+Slide 19: find the maximum in array
+
+Single loop
+	=> Linear efficiency.  Big O = O(n)
+	double the amount of data, your double the time
+
+Nested loops
+	loop within loop
+	Big O = O(n^2)
+	double the amount of data, your quadruple the time
+
+Loops with loop within loop
+	Big O = O(n^3)
+	double the amount of data, your octuple the time
+
+
+
+
+*** SORT:
+
+A great reason to use Collections !
+
+ArrayList<String> namesAL = new ArrayList<String>  ()
+
+Collections.sort (namesAL);
+
+
+ArrayList<Employee> empsAL = new ArrayList<Employee>  ()
+
+Collections.sort (empsAL);
+
+* provide Employee class implements Comparable
+
+* you name the Accessor method that is used to compare objects
+
+* you can also specify Ascending or Descending
+
+
+
+*** Binary Search
+
+Another great reason to use Collections !
+
+* data must be sorted (ascending or descding)
+* splitting your data in 2 again and again
+* until you run out of data to check or your find a match
+* Converges to an answer very quickly
+
+Search for:	Hope
+
+Amy
+Andrew
+Bella
+Boogle
+Dimas
+Frankie
+Hank
+Kurt
+Mike
+Teenie
+Wayne
+
+
+*** Collections
+
+If you need the data in different orders
+Owner by License Number
+Owner by Name
+:::
+Collections !!!!!
+
+If you need to quickly search data ...
+Collections !!!!!
+
+
+*** Typed Files / Generics
+See: Week 09 - Mike O's Lecture examples.txt
+
 
 
 EOF.

@@ -384,6 +384,12 @@ try
 	{
 		vehicle1 = (Vehicle) obj;
 	}
+	else
+	{
+	    throw ....
+	}
+
+	//  vehicle1 = (Vehicle) ois.readObject();
 
 	Object obj = ois.readObject();
 	if (obj instanceof Vehicle)
