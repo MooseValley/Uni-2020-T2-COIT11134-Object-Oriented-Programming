@@ -31,9 +31,211 @@ Week 12 - Final Revision
 
 
 LAST WEEK:  Week 10
-* Week 10 - List and Algorithm
+* Week 10 - List and Algorithm: LinkedLists, Algorithms, Collections, Iterators, Sort, Search, BinarySearch, Big O, ...
 
 THIS WEEK:  Week 11
 * Week 11 - Stacks, Queues and Trees
+
+
+NOTE: Lecture NOT recorded, something was messed up with the hosting ...
+When I tried to record, I got the error dialog:
+	Zoom
+	Please request permission from the meeting host
+	[OK]
+
+
+--------------------------------------------------------------
+*** Assignment 2 EXTENSION - Sun, 4, October, 2020 @ 11:55 PM
+--------------------------------------------------------------
+* See email from Farzad: Tue 29/09/2020 11:21 AM
+
+Due to the high number of extention requests, the due date of the Assignmnet 2 is extended for all of you. The new due date is 4, October, 2020.
+
+If you have already submitted, you will have a option to review or redo your assignmnet and have a second attempt to submit.
+
+
+
+Did anyone use any of these in their Ass 2:
+* Abstract Class
+* Interface Class
+* implements Comparable
+* Generic Classes
+* Generic Methods
+* Try with resources
+* Typed Files
+
+
+Frazad
+* Exam Advice: the exam will consist of stuff mostly not covered in the assignments.  May or may not be like this for the real exam ... All course topics are "valid" / "exam fodder".
+23-24 Oct
+* Open Book
+* 24 hours
+
+
+
+------------------------------------------------
+*** Stacks
+------------------------------------------------
+LIFO - Last in, first out
+
+A stack of paper, a pile of books
+SQL
+PHP
+Java OOP
+C++
+Java prog
+
+
+ArrayList<String> names = new ArrayList<String> ();
+names.add ("Mike");
+names.add ("Frankie");
+::::
+set, get, size()
+
+
+
+Stack<String> namesStack = new Stack<String> ();
+
+nameStack.push ("Mike");
+nameStack.push ("Frankie");
+
+String name = nameStack.pop(); // Frankie
+
+peek ()
+
+
+
+--------------------------------------------
+*** QUEUE
+--------------------------------------------
+A little  different to Stack ... you cannot declare a Queue object
+because Queue is an Interface class in Java.
+
+Queue <Employee> myQueue = new Queue <Employee> (); // ERROR
+
+FIFO
+First in, first out
+
+
+Super Market Queue
+5 people in front of you ... those 5 people must be served before you are served.
+
+Queue
+	pop
+	push
+	peek
+	size
+
+
+	HEAD
+Amy
+Bob
+Carl
+Deedee
+Emile
+	TAIL
+
+q.add ("Mike");
+
+	HEAD
+Amy
+Bob
+Carl				A
+Deedee
+Emile
+Mike
+	TAIL
+
+	HEAD
+Bob
+Carl
+Deedee			B
+Emile
+Mike
+	TAIL
+
+	HEAD
+Amy
+Bob
+Carl				C
+Deedee
+Mike
+	TAIL
+
+
+
+*** Slide 10
+Incomplete CircularArrayQueue it should shuffle down data automatically, etc  it uses add() and remove() but doesn't implement these.
+
+
+TODO
+* Quad bike riding
+* Jet Ski Riding
+* Leaning more avout Java
+
+
+10:04 - BREAK until 10:10 AM
+
+
+
+*** TREE
+
+Binary Tree
+max 2 nodes per parent node
+
+Balanced Trees
+
+              50
+             /
+           20
+          /  \
+         7    45
+          \
+           9
+
+
+Trees
+Why use ?
+Super fast to search
+Super fast to Sort
+
+
+*** Questions ??
+Stacks
+Queues
+Trees
+Anything else ?
+
+
+End of the Course Material
+
+==> Next Week is REVISION
+
+
+
+
+
+
+----------------------------------------------
+*** Next Week - Revision
+----------------------------------------------
+* Discuss the Sample / Practice Exam and then the most recent Past Exam
+--> Make sure you have worked through these *before* class
+--> NO SOLUTIONS given - just plenty of hints, tips, what if's to get you thinking and on the right track
+--> Sample / Practice Exam solutions
+----> see Mike O'Malley's Java Videos: http://tinyurl.com/MikesJavaVideos
+
+** If you want me to do a new video to work through any Sample / Practice Exam questions that aren't on my YouTube already -> let me know.
+
+** Bring along your questions
+** Bring along your issues, confusions, etc
+
+
+NOTE: Lecture NOT recorded, something was messed up with the hosting ...
+When I tried to record, I got the error dialog:
+	Zoom
+	Please request permission from the meeting host
+	[OK]
+
 
 EOF.
