@@ -63,6 +63,7 @@ Did anyone use any of these in their Ass 2:
 * Generic Methods
 * Try with resources
 * Typed Files
+* Define their own Exception classes
 
 
 Frazad

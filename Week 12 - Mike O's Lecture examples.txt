@@ -30,10 +30,356 @@ Week 11 - Stacks, Queues and Trees
 Week 12 - Final Revision    <--- YOU ARE HERE !
 
 
-LAST WEEK:  Week 11
-* Week 11 - Stacks, Queues and Trees
-
 THIS WEEK:  Week 12
 * Week 12 - Final Revision
+* Discuss the Sample / Practice Exam and then the most recent Past Exam
+--> Make sure you have worked through these *before* class
+--> NO SOLUTIONS given - just plenty of hints, tips, what if's to get you thinking and on the right track
+--> Sample / Practice Exam solutions
+----> see Mike O'Malley's Java Videos: http://tinyurl.com/MikesJavaVideos
+** If you want me to do a new video to work through any Sample / Practice Exam questions that aren't on my YouTube already -> let me know.
+** Bring along your questions
+** Bring along your issues, confusions, etc
+
+
+
+Compare Interface Classes and Abstract Classes ?
+5
+
+
+public .... .... myMethod(....) //throws .....
+
+
+
+public MyClass()
+{
+    // A comment
+    super(....);
+
+    ::::::
+
+}
+
+Person
+Employee extends Person
+Manager extends Employee
+
+Manager frankie = new Manager();
+
+if (frankie instanceof Manager)
+	::::
+frankie instanceof Employee
+frankie instanceof Person
+frankie instanceof Object
+
+
+
+public ...... MyInterface extends ....
+
+A.Q.9
+public class MyClass implements Comparable, ActionListener,  Serializable
+
+
+public void .....
+{
+	 // Is ??? Mandatory, optional, or NOT allowed ??
+    ???? class MyClass
+    {
+    }
+}
+
+
+try
+{
+}
+catch (Exception err)
+{
+}
+catch (ioexception | numberformatexception arr)
+{
+}
+catch (NumberFormatException err) // NO !!!
+{
+}
+finally
+{
+}
+
+
+
+Part B
+
+Q1
+
+this.soilPH = soilPH; // Parameterised Constructor missing line
+
+
+if (..........)
+	return true;
+else
+	return false;
+
+
+return "PH: " + soilPH + " is optimum for gardening: " + isOptimum ....
+
+
+
+Q2
+JFrame
+JLabel
+JTextField
+JSpinEdit
+JButton
+JPanel
+
+
+
+Q3
+
+User Input - NO !!
+
+
+Assume public and int
+
+// BEST Answer - does what the question asks:
+public int divideNumbers(int first, int second) throws ZeroDivisorException
+{
+	try
+	{
+	   int val = first / second;
+	}
+	catch (ArithmeticException err)
+	{
+	  throw new ZeroDivisorException("second number is zero");
+	}
+
+	return 0; ???
+}
+
+// No so good answer: does not divide first by second - which the questions asks
+public int divideNumbers(int first, int second) throws ZeroDivisorException
+{
+	if (second == 0)
+	  throw new ZeroDivisorException("second number is zero");
+
+	return 0; ???
+}
+
+
+Q4.
+
+public House (int bedRooms, String address) { //parameterised constructor
+    super(address);
+    this.bedRooms = bedRooms;
+}
+
+@Override
+public String toString() // House
+{
+	// Is this correct ????
+   return super().toString()  + " It has " + bedRooms + " bed rooms.";
+}
+
+
+
+Q5.
+
+Interfaces / Abstracts classes
+
+// Measurable Interface
+public interface Measureable{
+
+double calculateProfit();
+
+}
+
+// ItemSale class:
+@Override
+public double calculateProfit()
+{
+	return salePrice - purchaseCost;
+}
+
+@Override
+public String toString()
+{
+	return salePrice - purchaseCost;
+}
+
+
+Q6.
+
+Generic methods
+Generic classes
+-> whole bunch of rules and limitations about what you can do
+
+Type erasure
+
+<T extends Number>
+
+T fred;
+Cannot be used to extend the Exceptions classes
+
+
+Q7
+LIFO
+
+After push() inPacket contains:
+
+	Physical
+	::::
+	Application
+
+peek
+pop
+
+
+outPacket
+
+	Presentation
+	:::
+	Presentation
+	Physical
+
+First output loop (inPacket)
+	Application
+
+Second output loop (outPacket)
+	Presentation
+	:::
+	Presentation
+	Physical
+
+
+Output is:
+	Application
+	Presentation
+	:::
+	Presentation
+	Physical
+
+
+Q8
+
+line 8: numTrees+ ? numTrees++;
+
+line 20: public int getNumTrees() ? public static int getNumTrees();
+
+line 32: Tree backyardTree1 = new Tree(Lemon) ? Tree backyardTree1 = new Tree ("Lemon");
+I just got this three
+
+
+
+2019-T1
+
+
+Q1.
+
+
+public class UndergradStudent extends .....
+{
+   @Override
+   public String calculateGrade()
+   {
+       // Which will work ???
+       if (marks >= 85)  // OR
+       if (getMarks() >= 85)
+          return "HD";
+       else if (::::::)
+          return ????;
+       else if (::::::)
+          return ????;
+       :::
+   }
+
+
+   @Override
+   public String toString()
+   {
+      return super().toString() +
+         " with a grade of " + ?????;
+   }
+}
+
+
+Q3.
+
+public class ..... extends JFrame .....
+{
+   public ???? ()
+   {
+      :::
+
+      ExitListener exitListener = new ExitListener();
+      exitButton.addActionListener (exitListener);
+
+   }
+
+
+   private class ExitListener extends ActionListener .....
+   {
+      public void action????? (?????)
+      {
+          System.exit(0);
+      }
+   }
+
+}
+
+Q5.
+
+Vehicle
+	Car
+		Sportscar
+	Truck
+		HeavyGoods
+		SemiTrailer
+
+
+
+Q6.
+
+public <T ???> ???? calculateTotal (T[] numbers)
+{
+  T total = 0;
+
+  for (int k = 0; k < numbers.length; k++)
+  {
+     total += numbers[k];
+  }
+
+  return total;
+}
+
+
+Integer[] ints = {4, 2, 99, 12};
+Double[] doubles = {4.0, 2.6, 99.77, 12.3};
+
+
+Q7.
+
+public class Employee implements Payable
+{
+   :::
+   public double getSalary()
+   {
+      return salary;
+   }
+
+   public double amountPayable()
+   {
+      return getSalary();
+   }
+}
+
+
+BQ2.
+
+Ron
+Harry
+Hermoine
+Ginny
+
+
 
 EOF.
